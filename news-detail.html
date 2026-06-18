@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>新闻详情 - 康禾医疗资讯中心</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome 6 CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Tailwind 配置 -->
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            50: '#fff7ed',
+                            100: '#ffedd5',
+                            200: '#fed7aa',
+                            300: '#fdba74',
+                            400: '#fb923c',
+                            500: '#f97316',
+                            600: '#ea580c',
+                            700: '#c2410c',
+                            800: '#9a3412',
+                            900: '#7c2d12',
+                        },
+                        gray: {
+                            400: '#b8bfc0',
+                            500: '#94a3b8',
+                            600: '#64748b',
+                            700: '#334155',
+                            800: '#1e293b',
+                            900: '#0f172a',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .content-auto {
+                content-visibility: auto;
+            }
+            .transition-theme {
+                transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-slate-50 dark:bg-slate-900 text-slate-800 dark:text-slate-200 font-sans transition-theme antialiased">
+    <!-- 导航栏 (与全站风格一致) -->
+    <header
+        class="border-b border-slate-200 dark:border-slate-700 bg-white/90 dark:bg-slate-900/90 backdrop-blur-sm sticky top-0 z-50 transition-theme">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <div class="w-12 h-12 rounded-lg bg-primary-500 flex items-center justify-center text-white shadow-md">
+                    <i class="fa-solid fa-heart-pulse text-xl"></i>
+                </div>
+                <span class="font-semibold text-2xl tracking-tight text-primary-600 dark:text-primary-400">康禾医疗</span>
+            </div>
+            <nav class="hidden md:flex items-center gap-8">
+                <a href="index.html"
+                    class="text-slate-700 dark:text-slate-300 hover:text-primary-600 font-medium transition-theme py-2">首页</a>
+                <div class="relative group">
+                    <button
+                        class="flex items-center gap-1 text-slate-700 dark:text-slate-300 hover:text-primary-600 font-medium transition-theme py-2">
+                        医疗服务 <i class="fa-solid fa-chevron-down w-4 h-4 group-hover:rotate-180 transition-transform"></i>
+                    </button>
+                    <div
+                        class="absolute left-0 mt-1 w-64 bg-white/95 dark:bg-slate-800/95 backdrop-blur-sm rounded-xl shadow-lg border border-slate-200 dark:border-slate-700 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                        <div class="py-2">
+                            <a href="service-1.html"
+                                class="block px-5 py-2 hover:bg-slate-100 dark:hover:bg-slate-700 hover:text-primary-600">体检中心</a>
+                            <a href="service-2.html"
+                                class="block px-5 py-2 hover:bg-slate-100 dark:hover:bg-slate-700 hover:text-primary-600">专科诊疗</a>
+                            <a href="service-3.html"
+                                class="block px-5 py-2 hover:bg-slate-100 dark:hover:bg-slate-700 hover:text-primary-600">远程问诊</a>
+                            <a href="service-4.html"
+                                class="block px-5 py-2 hover:bg-slate-100 dark:hover:bg-slate-700 hover:text-primary-600">健康管理</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="relative group">
+                    <button
+                        class="flex items-center gap-1 text-slate-700 dark:text-slate-300 hover:text-primary-600 font-medium transition-theme py-2">
+                        关于我们 <i class="fa-solid fa-chevron-down w-4 h-4 group-hover:rotate-180 transition-transform"></i>
+                    </button>
+                    <div
+                        class="absolute left-0 mt-1 w-64 bg-white/95 dark:bg-slate-800/95 backdrop-blur-sm rounded-xl shadow-lg border border-slate-200 dark:border-slate-700 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                        <div class="py-2">
+                            <a href="about.html"
+                                class="block px-5 py-2 hover:bg-slate-100 dark:hover:bg-slate-700 hover:text-primary-600">医院介绍</a>
+                            <a href="team.html"
+                                class="block px-5 py-2 hover:bg-slate-100 dark:hover:bg-slate-700 hover:text-primary-600">专家团队</a>
+                            <a href="honor.html"
+                                class="block px-5 py-2 hover:bg-slate-100 dark:hover:bg-slate-700 hover:text-primary-600">荣誉资质</a>
+                        </div>
+                    </div>
+                </div>
+                <a href="news.html"
+                    class="text-slate-700 dark:text-slate-300 hover:text-primary-600 font-medium transition-theme py-2">新闻动态</a>
+                <a href="contact.html"
+                    class="text-slate-700 dark:text-slate-300 hover:text-primary-600 font-medium transition-theme py-2">联系我们</a>
+            </nav>
+            <div class="flex items-center gap-4">
+                <button id="theme-toggle" aria-label="切换深色/浅色模式"
+                    class="p-2 rounded-full text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-theme">
+                    <i class="fa-solid fa-sun w-5 h-5 hidden dark:block"></i>
+                    <i class="fa-solid fa-moon w-5 h-5 block dark:hidden"></i>
+                </button>
+                <button id="mobile-menu-btn" aria-label="菜单"
+                    class="md:hidden p-2 rounded-full text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-theme">
+                    <i class="fa-solid fa-bars w-6 h-6"></i>
+                </button>
+                <a href="appointment.html"
+                    class="hidden md:inline-block bg-primary-600 hover:bg-primary-700 dark:bg-primary-500 dark:hover:bg-primary-600 text-white text-sm font-semibold px-5 py-2.5 rounded-full shadow-sm transition-theme">立即预约</a>
+            </div>
+        </div>
+        <div id="mobile-menu"
+            class="md:hidden hidden bg-white/95 dark:bg-slate-900/95 backdrop-blur-sm border-t border-slate-200 dark:border-slate-700 px-4 py-4 shadow-lg transition-theme">
+            <div class="flex flex-col gap-3">
+                <a href="index.html" class="py-2 font-medium hover:text-primary-600">首页</a>
+                <details class="group">
+                    <summary class="flex justify-between items-center cursor-pointer list-none py-2 font-medium">医疗服务 <i
+                            class="fa-solid fa-chevron-down group-open:rotate-180 transition-transform"></i></summary>
+                    <div class="pl-4 mt-2 flex flex-col gap-2 text-sm"><a href="service-1.html">体检中心</a><a
+                            href="service-2.html">专科诊疗</a><a href="service-3.html">远程问诊</a><a
+                            href="service-4.html">健康管理</a></div>
+                </details>
+                <details class="group">
+                    <summary class="flex justify-between items-center cursor-pointer list-none py-2 font-medium">关于我们 <i
+                            class="fa-solid fa-chevron-down group-open:rotate-180 transition-transform"></i></summary>
+                    <div class="pl-4 mt-2 flex flex-col gap-2 text-sm"><a href="about.html">医院介绍</a><a
+                            href="team.html">专家团队</a><a href="honor.html">荣誉资质</a></div>
+                </details>
+                <a href="news.html" class="py-2 font-medium hover:text-primary-600">新闻动态</a>
+                <a href="contact.html" class="py-2 font-medium hover:text-primary-600">联系我们</a>
+                <div class="pt-2"><a href="appointment.html"
+                        class="block text-center bg-primary-600 text-white text-sm font-semibold px-5 py-2.5 rounded-full">立即预约</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- 文章内容区域，动态渲染 -->
+        <article class="py-12 md:py-16">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <!-- 面包屑导航 -->
+                <div class="flex items-center gap-2 text-sm text-slate-500 dark:text-slate-400 mb-6">
+                    <a href="news.html" class="hover:text-primary-600 transition">新闻动态</a>
+                    <i class="fa-solid fa-chevron-right text-xs"></i>
+                    <span id="breadcrumbCategory" class="text-slate-600 dark:text-slate-300">医院动态</span>
+                </div>
+
+                <!-- 文章头部 -->
+                <div class="mb-8 border-b border-slate-200 dark:border-slate-700 pb-6">
+                    <h1 id="articleTitle" class="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 dark:text-white leading-tight mb-4">康禾医疗新院区正式投入使用，智慧医疗升级</h1>
+                    <div class="flex flex-wrap items-center gap-4 text-sm text-slate-500 dark:text-slate-400">
+                        <span class="flex items-center gap-1"><i class="fa-regular fa-calendar-alt"></i> <span id="articleDate">2025.05.10</span></span>
+                        <span class="flex items-center gap-1"><i class="fa-regular fa-user"></i> 来源：<span id="articleSource">康禾医疗品牌部</span></span>
+                        <span class="flex items-center gap-1"><i class="fa-regular fa-eye"></i> 阅读 <span id="articleViews">1247</span> 次</span>
+                        <span class="flex items-center gap-1"><i class="fa-regular fa-clock"></i> 预计阅读 <span id="readTime">5</span> 分钟</span>
+                    </div>
+                </div>
+
+                <!-- 文章特色图片 -->
+                <div class="rounded-2xl overflow-hidden shadow-lg mb-10">
+                    <img id="articleImage" src="https://picsum.photos/id/180/1200/600" alt="文章配图" class="w-full h-auto object-cover">
+                </div>
+
+                <!-- 文章正文 (富文本样式) -->
+                <div id="articleContent" class="prose prose-slate dark:prose-invert max-w-none prose-headings:font-semibold prose-a:text-primary-600 prose-img:rounded-xl prose-img:shadow-md">
+                    <!-- 动态渲染文章内容 -->
+                </div>
+
+                <!-- 文章标签与分享 -->
+                <div class="mt-10 pt-6 border-t border-slate-200 dark:border-slate-700 flex flex-wrap items-center justify-between gap-4">
+                    <div class="flex flex-wrap items-center gap-2">
+                        <span class="text-sm font-medium text-slate-700 dark:text-slate-300">标签：</span>
+                        <div id="articleTags" class="flex flex-wrap gap-2">
+                            <!-- 动态标签 -->
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <span class="text-sm text-slate-500">分享到：</span>
+                        <button class="share-btn w-8 h-8 rounded-full bg-slate-100 dark:bg-slate-700 hover:bg-primary-100 dark:hover:bg-primary-900/50 transition flex items-center justify-center text-slate-600 dark:text-slate-300"><i class="fa-brands fa-weixin"></i></button>
+                        <button class="share-btn w-8 h-8 rounded-full bg-slate-100 dark:bg-slate-700 hover:bg-primary-100 dark:hover:bg-primary-900/50 transition flex items-center justify-center text-slate-600 dark:text-slate-300"><i class="fa-brands fa-weibo"></i></button>
+                        <button class="share-btn w-8 h-8 rounded-full bg-slate-100 dark:bg-slate-700 hover:bg-primary-100 dark:hover:bg-primary-900/50 transition flex items-center justify-center text-slate-600 dark:text-slate-300"><i class="fa-regular fa-copy"></i></button>
+                    </div>
+                </div>
+
+                <!-- 相关推荐区域 -->
+                <div class="mt-16 bg-slate-100 dark:bg-slate-800/40 rounded-2xl p-6 md:p-8">
+                    <h3 class="text-xl font-semibold text-slate-800 dark:text-slate-200 mb-5 flex items-center gap-2"><i class="fa-regular fa-newspaper text-primary-500"></i> 相关推荐</h3>
+                    <div id="relatedArticles" class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                        <!-- 动态推荐 -->
+                    </div>
+                </div>
+
+                <!-- 返回新闻列表按钮 -->
+                <div class="mt-10 text-center">
+                    <a href="news.html" class="inline-flex items-center gap-2 text-primary-600 dark:text-primary-400 hover:gap-3 transition-all font-medium"><i class="fa-solid fa-arrow-left"></i> 返回新闻列表</a>
+                </div>
+            </div>
+        </article>
+    </main>
+
+    <!-- 页脚 -->
+    <footer class="bg-slate-900 text-slate-300 py-12 transition-theme">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <div><div class="flex items-center gap-3 mb-4"><div class="w-10 h-10 rounded-lg bg-primary-500 flex items-center justify-center"><i class="fa-solid fa-heart-pulse text-white"></i></div><span class="font-semibold text-xl text-white">康禾医疗</span></div><p class="text-slate-400 text-sm">专业医疗 · 温暖守护</p></div>
+                <div><h4 class="text-white font-medium mb-3">快捷导航</h4><ul class="space-y-2 text-sm"><li><a href="index.html" class="text-slate-400 hover:text-primary-400">首页</a></li><li><a href="about.html" class="text-slate-400 hover:text-primary-400">医院介绍</a></li><li><a href="team.html" class="text-slate-400 hover:text-primary-400">专家团队</a></li></ul></div>
+                <div><h4 class="text-white font-medium mb-3">联系方式</h4><ul class="space-y-2 text-sm"><li class="flex gap-2"><i class="fa-solid fa-phone text-primary-400 mt-0.5"></i><span>400-888-9999</span></li><li class="flex gap-2"><i class="fa-regular fa-envelope text-primary-400 mt-0.5"></i><span>contact@kanghe.com</span></li><li class="flex gap-2"><i class="fa-solid fa-location-dot text-primary-400 mt-0.5"></i><span>北京市朝阳区建国路88号</span></li></ul></div>
+                <div><h4 class="text-white font-medium mb-3">关注我们</h4><div class="flex gap-4"><a href="#" class="text-slate-400 hover:text-primary-400 text-2xl"><i class="fa-brands fa-weixin"></i></a><a href="#" class="text-slate-400 hover:text-primary-400 text-2xl"><i class="fa-brands fa-weibo"></i></a><a href="#" class="text-slate-400 hover:text-primary-400 text-2xl"><i class="fa-brands fa-tiktok"></i></a></div></div>
+            </div>
+            <div class="border-t border-slate-800 pt-6 text-center text-slate-500 text-xs">© 2025 康禾医疗 版权所有 | 京ICP备12345678号-1</div>
+        </div>
+    </footer>
+
+    <script>
+        // ---------- 模拟新闻数据库 (与新闻列表页数据同步，增加完整正文) ----------
+        const newsDatabase = [
+            { 
+                id: 1, title: "康禾医疗新院区正式投入使用，智慧医疗升级", date: "2025.05.10", category: "hospital", categoryName: "医院动态", 
+                source: "康禾医疗品牌部", views: 1247, image: "https://picsum.photos/id/180/1200/600", tags: ["智慧医疗", "新院区"],
+                content: `<p>2025年5月10日，康禾医疗新院区正式落成启用。新院区建筑面积达4.2万平方米，新增床位200张，配备国际领先的医疗设备与AI辅助诊断系统。院长李志远在启用仪式上表示：“新院区的投入使用标志着康禾医疗迈入智慧化、精准化医疗的新阶段。”</p><p>新院区重点打造了智慧手术室、智能药房以及远程会诊中心，引入5G+物联网技术，实现患者从入院到出院全流程数字化管理。未来，康禾医疗将持续以患者为中心，提供更高效、更便捷的医疗服务。</p><img src="https://picsum.photos/id/13/800/450" alt="新院区内部" class="my-4 rounded-xl"><p>此外，新院区还设置了健康管理中心和国际医疗部，满足不同层次患者的多元化需求。康禾医疗将以此为契机，进一步加强学科建设与人才引进，打造区域医疗新高地。</p>`
+            },
+            { 
+                id: 2, title: "春季心血管疾病预防指南：专家给出五条黄金法则", date: "2025.04.28", category: "health", categoryName: "健康科普", 
+                source: "心内科 张建国", views: 3562, image: "https://picsum.photos/id/287/1200/600", tags: ["心血管", "预防"],
+                content: `<p>春季气温变化剧烈，心血管疾病进入高发期。康禾医疗心内科主任张建国教授为广大市民总结了五条黄金预防法则：</p><p><strong>一、注意保暖，避免温差刺激。</strong>早晚外出及时增减衣物，避免寒冷诱发血管痉挛。</p><p><strong>二、合理膳食，控制盐脂摄入。</strong>多吃新鲜蔬果，减少高脂高糖饮食。</p><p><strong>三、适度运动，避免清晨剧烈活动。</strong>建议选择下午或傍晚进行散步、太极等温和运动。</p><p><strong>四、规律服药，定期监测血压血糖。</strong>高血压、糖尿病患者切勿自行停药。</p><p><strong>五、保持情绪稳定，避免过度劳累。</strong>春季肝火易旺，保持心态平和尤为重要。</p><p>张教授提醒，一旦出现胸痛、胸闷、气短等症状，应及时就医。</p>`
+            },
+            { 
+                id: 3, title: "健康讲座进社区，慢病管理公益行圆满举行", date: "2025.04.15", category: "activity", categoryName: "公益活动", 
+                source: "公益事业部", views: 892, image: "https://picsum.photos/id/434/1200/600", tags: ["社区义诊", "慢病管理"],
+                content: `<p>4月15日，康禾医疗“医路同行”公益项目走进朝阳区团结湖社区，开展慢病管理公益讲座及义诊活动。内分泌科、心内科、中医科等多科室专家为居民提供免费血糖血压测量、用药指导及健康咨询。</p><p>活动现场气氛热烈，共服务居民300余人次，发放健康手册500余份。社区王阿姨表示：“专家讲得很清楚，在家门口就能享受到大医院的诊疗服务，太贴心了。”</p><p>康禾医疗将持续开展此类公益活动，践行社会责任，助力健康中国建设。</p>`
+            },
+            { 
+                id: 4, title: "国家卫健委发布新版《健康体检管理规范》解读", date: "2025.04.10", category: "policy", categoryName: "政策解读", 
+                source: "政策研究中心", views: 653, image: "https://picsum.photos/id/48/1200/600", tags: ["政策前沿", "体检"],
+                content: `<p>近日，国家卫健委发布《健康体检管理规范（2025年版）》。康禾医疗政策研究中心第一时间进行了解读。新规强调体检机构必须建立质量控制体系，确保检查结果的准确性与互认性。</p><p>同时，新规鼓励体检机构运用信息化手段提供个性化套餐推荐及检后健康管理服务。康禾医疗体检中心已率先完成升级，推出AI智能评估系统，为受检者提供更为精准的健康建议。</p><p>康禾医疗体检中心负责人表示，将持续跟进国家政策，不断提升服务质量，守护百姓健康。</p>`
+            },
+            { 
+                id: 5, title: "国际远程会诊中心成立，连接全球顶尖医疗资源", date: "2025.03.28", category: "hospital", categoryName: "医院动态", 
+                source: "国际医疗部", views: 2103, image: "https://picsum.photos/id/129/1200/600", tags: ["国际合作", "远程医疗"],
+                content: `<p>3月28日，康禾医疗国际远程会诊中心正式揭牌。该中心与美国梅奥诊所、约翰霍普金斯医院、日本癌研有明医院等国际顶级医疗机构建立合作关系。</p><p>患者可通过远程会诊平台获得国际专家的二次诊疗意见，避免了异地就医的奔波。康禾医疗国际医疗部主任介绍，平台支持多语种实时翻译及病历资料云端共享，确保会诊高效精准。</p><p>此举将极大提升疑难重症的诊治水平，为患者提供更多治疗选择。</p>`
+            }
+        ];
+
+        // 获取URL参数中的id
+        function getQueryParam(param) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(param);
+        }
+
+        const newsId = parseInt(getQueryParam('id')) || 1;  // 默认展示id=1
+        const article = newsDatabase.find(item => item.id === newsId) || newsDatabase[0];
+
+        // 渲染文章内容
+        if (article) {
+            document.getElementById('articleTitle').innerText = article.title;
+            document.getElementById('articleDate').innerText = article.date;
+            document.getElementById('articleSource').innerText = article.source;
+            document.getElementById('articleViews').innerText = article.views;
+            document.getElementById('articleImage').src = article.image;
+            document.getElementById('breadcrumbCategory').innerText = article.categoryName;
+            // 阅读时间估算 (大约每分钟300字)
+            const textLength = article.content.replace(/<[^>]*>/g, '').length;
+            const readMinutes = Math.max(1, Math.ceil(textLength / 300));
+            document.getElementById('readTime').innerText = readMinutes;
+            // 渲染正文
+            document.getElementById('articleContent').innerHTML = article.content;
+            // 渲染标签
+            const tagsContainer = document.getElementById('articleTags');
+            if (article.tags && article.tags.length) {
+                tagsContainer.innerHTML = article.tags.map(tag => `<span class="px-2 py-1 bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 text-xs rounded-full">${tag}</span>`).join('');
+            } else {
+                tagsContainer.innerHTML = '<span class="text-slate-400 text-xs">暂无标签</span>';
+            }
+        } else {
+            document.getElementById('articleTitle').innerText = "文章未找到";
+            document.getElementById('articleContent').innerHTML = "<p>抱歉，您访问的文章不存在或已被删除。</p>";
+        }
+
+        // 相关推荐：排除当前文章，取同类别或最新两篇
+        let related = newsDatabase.filter(item => item.id !== newsId);
+        if (related.length > 2) related = related.slice(0, 2);
+        const relatedContainer = document.getElementById('relatedArticles');
+        if (related.length) {
+            relatedContainer.innerHTML = related.map(rel => `
+                <a href="news-detail.html?id=${rel.id}" class="group flex flex-col sm:flex-row gap-4 bg-white dark:bg-slate-800 rounded-xl p-4 border border-slate-200 dark:border-slate-700 hover:shadow-md transition-all">
+                    <img src="${rel.image}" alt="${rel.title}" class="w-full sm:w-28 h-24 object-cover rounded-lg">
+                    <div class="flex-1">
+                        <h4 class="font-semibold text-slate-800 dark:text-slate-200 group-hover:text-primary-600 transition line-clamp-2">${rel.title}</h4>
+                        <p class="text-xs text-slate-500 mt-1"><i class="fa-regular fa-calendar-alt mr-1"></i>${rel.date}</p>
+                    </div>
+                </a>
+            `).join('');
+        } else {
+            relatedContainer.innerHTML = '<p class="text-slate-500 col-span-2 text-center">暂无更多推荐</p>';
+        }
+
+        // 分享按钮简单提示
+        document.querySelectorAll('.share-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                alert('分享功能开发中，感谢您的关注！您可复制链接分享。');
+            });
+        });
+
+        // 深色模式切换 + 移动菜单 (与全局一致)
+        const themeToggle = document.getElementById('theme-toggle');
+        const htmlElem = document.documentElement;
+        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            htmlElem.classList.add('dark');
+        } else {
+            htmlElem.classList.remove('dark');
+        }
+        themeToggle.addEventListener('click', () => {
+            htmlElem.classList.toggle('dark');
+            localStorage.theme = htmlElem.classList.contains('dark') ? 'dark' : 'light';
+        });
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+        document.querySelectorAll('#mobile-menu a').forEach(link => link.addEventListener('click', () => mobileMenu.classList.add('hidden')));
+    </script>
+</body>
+
+</html>
