@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>新闻动态 - 康禾医疗资讯中心</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome 6 CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Tailwind 配置与自定义工具类（仅扩展Tailwind，无额外样式覆盖） -->
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            50: '#fff7ed',
+                            100: '#ffedd5',
+                            200: '#fed7aa',
+                            300: '#fdba74',
+                            400: '#fb923c',
+                            500: '#f97316',
+                            600: '#ea580c',
+                            700: '#c2410c',
+                            800: '#9a3412',
+                            900: '#7c2d12',
+                        },
+                        gray: {
+                            400: '#b8bfc0',
+                            500: '#94a3b8',
+                            600: '#64748b',
+                            700: '#334155',
+                            800: '#1e293b',
+                            900: '#0f172a',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .content-auto {
+                content-visibility: auto;
+            }
+            .transition-theme {
+                transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+            }
+            /* 仅用于多行文本截断，无样式覆盖冲突 */
+            .line-clamp-2 {
+                display: -webkit-box;
+                -webkit-line-clamp: 2;
+                -webkit-box-orient: vertical;
+                overflow: hidden;
+            }
+            .line-clamp-3 {
+                display: -webkit-box;
+                -webkit-line-clamp: 3;
+                -webkit-box-orient: vertical;
+                overflow: hidden;
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-slate-50 dark:bg-slate-900 text-slate-800 dark:text-slate-200 font-sans transition-theme antialiased">
+    <!-- 导航栏 (与首页风格完全一致) -->
+    <header
+        class="border-b border-slate-200 dark:border-slate-700 bg-white/90 dark:bg-slate-900/90 backdrop-blur-sm sticky top-0 z-50 transition-theme">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
+            <!-- Logo -->
+            <div class="flex items-center gap-3">
+                <div class="w-12 h-12 rounded-lg bg-primary-500 flex items-center justify-center text-white shadow-md">
+                    <i class="fa-solid fa-heart-pulse text-xl"></i>
+                </div>
+                <span class="font-semibold text-2xl tracking-tight text-primary-600 dark:text-primary-400">康禾医疗</span>
+            </div>
+
+            <!-- 桌面端导航 -->
+            <nav class="hidden md:flex items-center gap-8">
+                <a href="index.html" class="text-slate-700 dark:text-slate-300 hover:text-primary-600 dark:hover:text-primary-400 font-medium transition-theme py-2">首页</a>
+                <!-- 医疗服务下拉 -->
+                <div class="relative group">
+                    <button class="flex items-center gap-1 text-slate-700 dark:text-slate-300 hover:text-primary-600 dark:hover:text-primary-400 font-medium transition-theme py-2">
+                        医疗服务
+                        <i class="fa-solid fa-chevron-down w-4 h-4 group-hover:rotate-180 transition-transform"></i>
+                    </button>
+                    <div class="absolute left-0 mt-1 w-64 bg-white/95 dark:bg-slate-800/95 backdrop-blur-sm rounded-xl shadow-lg border border-slate-200 dark:border-slate-700 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                        <div class="py-2">
+                            <a href="service-1.html" class="block px-5 py-2 hover:bg-slate-100 dark:hover:bg-slate-700 hover:text-primary-600 transition-theme">体检中心</a>
+                            <a href="service-2.html" class="block px-5 py-2 hover:bg-slate-100 dark:hover:bg-slate-700 hover:text-primary-600 transition-theme">专科诊疗</a>
+                            <a href="service-3.html" class="block px-5 py-2 hover:bg-slate-100 dark:hover:bg-slate-700 hover:text-primary-600 transition-theme">远程问诊</a>
+                            <a href="service-4.html" class="block px-5 py-2 hover:bg-slate-100 dark:hover:bg-slate-700 hover:text-primary-600 transition-theme">健康管理</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- 关于我们下拉 -->
+                <div class="relative group">
+                    <button class="flex items-center gap-1 text-slate-700 dark:text-slate-300 hover:text-primary-600 dark:hover:text-primary-400 font-medium transition-theme py-2">
+                        关于我们
+                        <i class="fa-solid fa-chevron-down w-4 h-4 group-hover:rotate-180 transition-transform"></i>
+                    </button>
+                    <div class="absolute left-0 mt-1 w-64 bg-white/95 dark:bg-slate-800/95 backdrop-blur-sm rounded-xl shadow-lg border border-slate-200 dark:border-slate-700 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                        <div class="py-2">
+                            <a href="about.html" class="block px-5 py-2 hover:bg-slate-100 dark:hover:bg-slate-700 hover:text-primary-600 transition-theme">医院介绍</a>
+                            <a href="team.html" class="block px-5 py-2 hover:bg-slate-100 dark:hover:bg-slate-700 hover:text-primary-600 transition-theme">专家团队</a>
+                            <a href="honor.html" class="block px-5 py-2 hover:bg-slate-100 dark:hover:bg-slate-700 hover:text-primary-600 transition-theme">荣誉资质</a>
+                        </div>
+                    </div>
+                </div>
+                <a href="news.html" class="text-primary-600 dark:text-primary-400 font-medium border-b-2 border-primary-500 py-2">新闻动态</a>
+                <a href="contact.html" class="text-slate-700 dark:text-slate-300 hover:text-primary-600 dark:hover:text-primary-400 font-medium transition-theme py-2">联系我们</a>
+            </nav>
+
+            <!-- 右侧功能区 -->
+            <div class="flex items-center gap-4">
+                <button id="theme-toggle" aria-label="切换深色/浅色模式"
+                    class="p-2 rounded-full text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-theme">
+                    <i class="fa-solid fa-sun w-5 h-5 hidden dark:block"></i>
+                    <i class="fa-solid fa-moon w-5 h-5 block dark:hidden"></i>
+                </button>
+                <button id="mobile-menu-btn" aria-label="菜单"
+                    class="md:hidden p-2 rounded-full text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-theme">
+                    <i class="fa-solid fa-bars w-6 h-6"></i>
+                </button>
+                <a href="appointment.html" class="hidden md:inline-block bg-primary-600 hover:bg-primary-700 dark:bg-primary-500 dark:hover:bg-primary-600 text-white text-sm font-semibold px-5 py-2.5 rounded-full shadow-sm transition-theme">
+                    立即预约
+                </a>
+            </div>
+        </div>
+
+        <!-- 移动端菜单 -->
+        <div id="mobile-menu" class="md:hidden hidden bg-white/95 dark:bg-slate-900/95 backdrop-blur-sm border-t border-slate-200 dark:border-slate-700 px-4 py-4 shadow-lg transition-theme">
+            <div class="flex flex-col gap-3">
+                <a href="index.html" class="py-2 text-slate-700 dark:text-slate-300 font-medium hover:text-primary-600 transition-theme">首页</a>
+                <details class="group">
+                    <summary class="flex justify-between items-center cursor-pointer list-none py-2 text-slate-700 dark:text-slate-300 font-medium">
+                        医疗服务 <i class="fa-solid fa-chevron-down w-5 h-5 group-open:rotate-180 transition-transform"></i>
+                    </summary>
+                    <div class="pl-4 mt-2 flex flex-col gap-2 text-slate-600 dark:text-slate-400 text-sm">
+                        <a href="service-1.html" class="py-1 hover:text-primary-600">体检中心</a>
+                        <a href="service-2.html" class="py-1 hover:text-primary-600">专科诊疗</a>
+                        <a href="service-3.html" class="py-1 hover:text-primary-600">远程问诊</a>
+                        <a href="service-4.html" class="py-1 hover:text-primary-600">健康管理</a>
+                    </div>
+                </details>
+                <details class="group">
+                    <summary class="flex justify-between items-center cursor-pointer list-none py-2 text-slate-700 dark:text-slate-300 font-medium">
+                        关于我们 <i class="fa-solid fa-chevron-down w-5 h-5 group-open:rotate-180 transition-transform"></i>
+                    </summary>
+                    <div class="pl-4 mt-2 flex flex-col gap-2 text-slate-600 dark:text-slate-400 text-sm">
+                        <a href="about.html" class="py-1 hover:text-primary-600">医院介绍</a>
+                        <a href="team.html" class="py-1 hover:text-primary-600">专家团队</a>
+                        <a href="honor.html" class="py-1 hover:text-primary-600">荣誉资质</a>
+                    </div>
+                </details>
+                <a href="news.html" class="py-2 text-primary-600 dark:text-primary-400 font-medium">新闻动态</a>
+                <a href="contact.html" class="py-2 text-slate-700 dark:text-slate-300 font-medium hover:text-primary-600 transition-theme">联系我们</a>
+                <div class="pt-2">
+                    <a href="appointment.html" class="block text-center bg-primary-600 hover:bg-primary-700 dark:bg-primary-500 text-white text-sm font-semibold px-5 py-2.5 rounded-full shadow-sm">立即预约</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- 页面标题区 -->
+        <section class="bg-gradient-to-r from-primary-50 to-slate-100 dark:from-primary-900/20 dark:to-slate-800/50 py-12 md:py-16 transition-theme">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center">
+                    <h1 class="text-4xl md:text-5xl font-light text-slate-900 dark:text-white mb-4">新闻动态</h1>
+                    <p class="text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">聚焦医疗前沿，传递健康资讯，记录康禾每一步成长</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 分类筛选 + 搜索区域 -->
+        <section class="py-8 border-b border-slate-200 dark:border-slate-700 sticky top-[73px] bg-white/80 dark:bg-slate-900/80 backdrop-blur-sm z-40 transition-theme">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+                    <!-- 分类标签组 - 完全使用 Tailwind 条件类，无自定义css -->
+                    <div class="flex flex-wrap gap-2">
+                        <button data-category="all" class="category-filter px-5 py-2 rounded-full text-sm font-medium transition-all duration-200 border border-slate-300 dark:border-slate-600 hover:bg-primary-100 dark:hover:bg-primary-800/40 text-slate-700 dark:text-slate-300 [&.active]:bg-primary-500 [&.active]:text-white [&.active]:border-primary-500 dark:[&.active]:bg-primary-500 dark:[&.active]:text-slate-900 dark:[&.active]:border-primary-500">全部</button>
+                        <button data-category="hospital" class="category-filter px-5 py-2 rounded-full text-sm font-medium transition-all duration-200 border border-slate-300 dark:border-slate-600 hover:bg-primary-100 dark:hover:bg-primary-800/40 text-slate-700 dark:text-slate-300 [&.active]:bg-primary-500 [&.active]:text-white [&.active]:border-primary-500 dark:[&.active]:bg-primary-500 dark:[&.active]:text-slate-900 dark:[&.active]:border-primary-500">医院动态</button>
+                        <button data-category="health" class="category-filter px-5 py-2 rounded-full text-sm font-medium transition-all duration-200 border border-slate-300 dark:border-slate-600 hover:bg-primary-100 dark:hover:bg-primary-800/40 text-slate-700 dark:text-slate-300 [&.active]:bg-primary-500 [&.active]:text-white [&.active]:border-primary-500 dark:[&.active]:bg-primary-500 dark:[&.active]:text-slate-900 dark:[&.active]:border-primary-500">健康科普</button>
+                        <button data-category="activity" class="category-filter px-5 py-2 rounded-full text-sm font-medium transition-all duration-200 border border-slate-300 dark:border-slate-600 hover:bg-primary-100 dark:hover:bg-primary-800/40 text-slate-700 dark:text-slate-300 [&.active]:bg-primary-500 [&.active]:text-white [&.active]:border-primary-500 dark:[&.active]:bg-primary-500 dark:[&.active]:text-slate-900 dark:[&.active]:border-primary-500">公益活动</button>
+                        <button data-category="policy" class="category-filter px-5 py-2 rounded-full text-sm font-medium transition-all duration-200 border border-slate-300 dark:border-slate-600 hover:bg-primary-100 dark:hover:bg-primary-800/40 text-slate-700 dark:text-slate-300 [&.active]:bg-primary-500 [&.active]:text-white [&.active]:border-primary-500 dark:[&.active]:bg-primary-500 dark:[&.active]:text-slate-900 dark:[&.active]:border-primary-500">政策解读</button>
+                    </div>
+                    <!-- 搜索框 -->
+                    <div class="relative w-full md:w-80">
+                        <i class="fa-solid fa-magnifying-glass absolute left-3 top-1/2 -translate-y-1/2 text-slate-400"></i>
+                        <input type="text" id="searchInput" placeholder="搜索文章标题或关键词..." class="w-full pl-10 pr-4 py-2 rounded-full border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 text-slate-800 dark:text-slate-200 focus:outline-none focus:ring-2 focus:ring-primary-400 transition-theme">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 新闻列表区域 - 动态渲染，卡片效果完全使用Tailwind过渡和阴影类 -->
+        <section class="py-12 md:py-16 transition-theme">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div id="newsGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- 新闻卡片会通过js动态渲染，卡片hover效果: transition-all duration-300 hover:-translate-y-1 hover:shadow-xl -->
+                </div>
+                <!-- 无结果提示 -->
+                <div id="noResult" class="hidden text-center py-16">
+                    <i class="fa-solid fa-newspaper text-5xl text-slate-300 dark:text-slate-600 mb-4"></i>
+                    <p class="text-slate-500 dark:text-slate-400 text-lg">暂无相关新闻，试试其他关键词吧~</p>
+                </div>
+                <!-- 分页组件 -->
+                <div id="paginationContainer" class="flex justify-center mt-12"></div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 页脚 (与首页一致) -->
+    <footer class="bg-slate-900 text-slate-300 py-16 transition-theme">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+                <div>
+                    <div class="flex items-center gap-3 mb-6">
+                        <div class="w-10 h-10 rounded-lg bg-primary-500 flex items-center justify-center text-white">
+                            <i class="fa-solid fa-heart-pulse"></i>
+                        </div>
+                        <span class="font-semibold text-xl text-white">康禾医疗</span>
+                    </div>
+                    <p class="text-slate-400 mb-6">专业的医疗服务提供商，致力于为客户提供高品质、个性化的健康管理解决方案。</p>
+                    <div class="flex gap-4">
+                        <a href="#" class="text-slate-400 hover:text-primary-400 transition-theme"><i class="fa-brands fa-weixin text-xl"></i></a>
+                        <a href="#" class="text-slate-400 hover:text-primary-400 transition-theme"><i class="fa-brands fa-weibo text-xl"></i></a>
+                        <a href="#" class="text-slate-400 hover:text-primary-400 transition-theme"><i class="fa-brands fa-tiktok text-xl"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-white font-medium text-lg mb-6">快捷导航</h3>
+                    <ul class="space-y-3">
+                        <li><a href="index.html" class="text-slate-400 hover:text-primary-400">首页</a></li>
+                        <li><a href="about.html" class="text-slate-400 hover:text-primary-400">关于我们</a></li>
+                        <li><a href="service-1.html" class="text-slate-400 hover:text-primary-400">医疗服务</a></li>
+                        <li><a href="team.html" class="text-slate-400 hover:text-primary-400">专家团队</a></li>
+                        <li><a href="news.html" class="text-slate-400 hover:text-primary-400">新闻动态</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-white font-medium text-lg mb-6">联系我们</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-start gap-3"><i class="fa-solid fa-map-marker-alt mt-1 text-primary-400"></i><span class="text-slate-400">北京市朝阳区建国路88号康禾医疗大厦</span></li>
+                        <li class="flex items-center gap-3"><i class="fa-solid fa-phone text-primary-400"></i><span class="text-slate-400">400-888-9999</span></li>
+                        <li class="flex items-center gap-3"><i class="fa-solid fa-envelope text-primary-400"></i><span class="text-slate-400">contact@kanghe.com</span></li>
+                        <li class="flex items-center gap-3"><i class="fa-solid fa-clock text-primary-400"></i><span class="text-slate-400">周一至周日 8:00-20:00</span></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-white font-medium text-lg mb-6">预约热线</h3>
+                    <div class="bg-slate-800 rounded-xl p-6 text-center mb-6"><p class="text-slate-400 mb-2">24小时在线预约</p><p class="text-2xl font-semibold text-primary-400">400-888-9999</p></div>
+                    <a href="contact.html" class="block text-center bg-primary-600 hover:bg-primary-700 text-white font-medium px-5 py-2.5 rounded-full transition-theme">在线咨询</a>
+                </div>
+            </div>
+            <div class="border-t border-slate-800 pt-8 text-center text-slate-500 text-sm"><p>© 2025 康禾医疗 版权所有 | 京ICP备12345678号-1 | 医疗机构执业许可证：京卫医证字(2025)第001号</p></div>
+        </div>
+    </footer>
+
+    <script>
+        // ---------- 新闻数据 (涵盖多类别) ----------
+        const newsData = [
+            { id: 1, title: "康禾医疗新院区正式投入使用，智慧医疗升级", summary: "新院区配备国际领先医疗设备，新增床位200张，AI辅助诊断系统全面上线，全面提升诊疗效率与患者体验。", date: "2025.05.10", category: "hospital", categoryName: "医院动态", image: "https://picsum.photos/id/180/600/400", tag: "智慧医疗" },
+            { id: 2, title: "春季心血管疾病预防指南：专家给出五条黄金法则", summary: "春季气温多变，心血管疾病进入高发期。心内科张建国主任从饮食、运动、用药等角度分享科学预防策略。", date: "2025.04.28", category: "health", categoryName: "健康科普", image: "https://picsum.photos/id/287/600/400", tag: "心血管" },
+            { id: 3, title: "健康讲座进社区，慢病管理公益行圆满举行", summary: "我院专家团队走进朝阳区多个社区，开展高血压、糖尿病等慢病管理公益讲座，惠及居民500余人次。", date: "2025.04.15", category: "activity", categoryName: "公益活动", image: "https://picsum.photos/id/434/600/400", tag: "社区义诊" },
+            { id: 4, title: "国家卫健委发布新版《健康体检管理规范》解读", summary: "康禾医疗政策研究中心深度解读新规，强调个性化体检与质量控制，助力医疗机构规范化升级。", date: "2025.04.10", category: "policy", categoryName: "政策解读", image: "https://picsum.photos/id/48/600/400", tag: "政策前沿" },
+            { id: 5, title: "国际远程会诊中心成立，连接全球顶尖医疗资源", summary: "康禾医疗与梅奥诊所、约翰霍普金斯医院达成合作，开启跨国远程诊疗服务，为疑难杂症患者带来新希望。", date: "2025.03.28", category: "hospital", categoryName: "医院动态", image: "https://picsum.photos/id/129/600/400", tag: "国际合作" },
+            { id: 6, title: "世界睡眠日：中医助眠妙招缓解失眠焦虑", summary: "中医科赵主任分享穴位按摩、药膳食疗等改善睡眠质量的方法，帮助都市人群远离失眠困扰。", date: "2025.03.21", category: "health", categoryName: "健康科普", image: "https://picsum.photos/id/155/600/400", tag: "睡眠健康" },
+            { id: 7, title: "关爱女性健康月：两癌筛查公益活动正式启动", summary: "康禾医疗联合妇联开展为期一个月的乳腺癌、宫颈癌免费筛查，提升女性健康意识，早发现早治疗。", date: "2025.03.08", category: "activity", categoryName: "公益活动", image: "https://picsum.photos/id/64/600/400", tag: "女性健康" },
+            { id: 8, title: "医保支付改革新动向：DRG付费模式全面解析", summary: "针对医保DRG分组付费改革，我院医保办专家解读其对患者就医费用及医院管理的影响，降低看病负担。", date: "2025.02.20", category: "policy", categoryName: "政策解读", image: "https://picsum.photos/id/26/600/400", tag: "医保政策" },
+            { id: 9, title: "康禾医疗荣获‘全国患者满意医院’称号", summary: "在国家卫健委组织的患者体验调研中，我院凭借温馨服务与专业诊疗获得98.6%满意度，再获行业殊荣。", date: "2025.02.10", category: "hospital", categoryName: "医院动态", image: "https://picsum.photos/id/169/600/400", tag: "荣誉资质" },
+            { id: 10, title: "儿童春季传染病防护手册：家长必读", summary: "儿科王强医生梳理流感、手足口病、水痘等春季常见传染病的症状识别与家庭护理要点。", date: "2025.01.25", category: "health", categoryName: "健康科普", image: "https://picsum.photos/id/116/600/400", tag: "儿科" },
+            { id: 11, title: "‘医路同行’大型义诊走进养老院", summary: "康禾医疗志愿者团队为养老院老人提供健康检查、用药指导和康复训练，传递温暖与关爱。", date: "2025.01.15", category: "activity", categoryName: "公益活动", image: "https://picsum.photos/id/242/600/400", tag: "敬老" },
+            { id: 12, title: "互联网医院新规落地，远程问诊迎来合规化浪潮", summary: "新政推动远程医疗标准化，康禾互联网医院率先完成全流程合规改造，保障患者数据安全。", date: "2025.01.05", category: "policy", categoryName: "政策解读", image: "https://picsum.photos/id/22/600/400", tag: "数字医疗" }
+        ];
+
+        // 分页配置
+        const itemsPerPage = 6;
+        let currentPage = 1;
+        let currentCategory = "all";
+        let currentKeyword = "";
+
+        const newsGrid = document.getElementById("newsGrid");
+        const paginationContainer = document.getElementById("paginationContainer");
+        const noResultDiv = document.getElementById("noResult");
+        const searchInput = document.getElementById("searchInput");
+        const categoryBtns = document.querySelectorAll(".category-filter");
+
+        // 过滤逻辑
+        function getFilteredNews() {
+            let filtered = [...newsData];
+            if (currentCategory !== "all") {
+                filtered = filtered.filter(item => item.category === currentCategory);
+            }
+            if (currentKeyword.trim() !== "") {
+                const kw = currentKeyword.trim().toLowerCase();
+                filtered = filtered.filter(item => item.title.toLowerCase().includes(kw) || item.summary.toLowerCase().includes(kw) || (item.tag && item.tag.toLowerCase().includes(kw)));
+            }
+            return filtered;
+        }
+
+        // 更新分类按钮 active 类 (完全使用 Tailwind 类控制)
+        function updateCategoryActive() {
+            categoryBtns.forEach(btn => {
+                const catValue = btn.getAttribute("data-category");
+                if (catValue === currentCategory) {
+                    btn.classList.add("active");
+                } else {
+                    btn.classList.remove("active");
+                }
+            });
+        }
+
+        // 渲染新闻卡片: 所有样式均为Tailwind类，hover使用 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl
+        function renderNews() {
+            const filtered = getFilteredNews();
+            const totalItems = filtered.length;
+            const totalPages = Math.ceil(totalItems / itemsPerPage);
+            if (currentPage > totalPages && totalPages > 0) currentPage = totalPages;
+            if (currentPage < 1) currentPage = 1;
+            const startIdx = (currentPage - 1) * itemsPerPage;
+            const endIdx = startIdx + itemsPerPage;
+            const pageItems = filtered.slice(startIdx, endIdx);
+
+            newsGrid.innerHTML = "";
+            if (pageItems.length === 0) {
+                noResultDiv.classList.remove("hidden");
+                newsGrid.classList.add("hidden");
+                paginationContainer.innerHTML = "";
+                return;
+            }
+            noResultDiv.classList.add("hidden");
+            newsGrid.classList.remove("hidden");
+
+            pageItems.forEach(news => {
+                const card = document.createElement("div");
+                // 卡片基础样式 + 悬停效果 (完全Tailwind)
+                card.className = "bg-white dark:bg-slate-800 rounded-2xl shadow-sm overflow-hidden border border-slate-200 dark:border-slate-700 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl flex flex-col";
+                const categoryColorMap = {
+                    hospital: "bg-blue-100 text-blue-700 dark:bg-blue-900/40 dark:text-blue-300",
+                    health: "bg-green-100 text-green-700 dark:bg-green-900/40 dark:text-green-300",
+                    activity: "bg-purple-100 text-purple-700 dark:bg-purple-900/40 dark:text-purple-300",
+                    policy: "bg-amber-100 text-amber-700 dark:bg-amber-900/40 dark:text-amber-300"
+                };
+                const categoryColor = categoryColorMap[news.category] || "bg-gray-100 text-gray-700";
+                
+                card.innerHTML = `
+                    <img src="${news.image}" alt="${news.title}" class="h-52 w-full object-cover transition-transform duration-500 group-hover:scale-105">
+                    <div class="p-6 flex flex-col flex-grow">
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="text-xs px-2 py-1 rounded-full ${categoryColor} font-medium">${news.categoryName}</span>
+                            <span class="text-xs text-slate-500 dark:text-slate-400"><i class="fa-regular fa-calendar mr-1"></i>${news.date}</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-800 dark:text-slate-100 mb-2 line-clamp-2">${news.title}</h3>
+                        <p class="text-slate-600 dark:text-slate-400 text-sm mb-4 line-clamp-3">${news.summary}</p>
+                        <div class="flex flex-wrap items-center justify-between mt-auto gap-3">
+                            ${news.tag ? `<span class="text-xs text-primary-600 dark:text-primary-400 bg-primary-50 dark:bg-primary-900/30 px-2 py-1 rounded-full"><i class="fa-regular fa-tag mr-1"></i>${news.tag}</span>` : '<span></span>'}
+                            <a href="news-detail.html?id=${news.id}" class="inline-flex items-center gap-1 text-primary-600 dark:text-primary-400 font-medium text-sm hover:gap-2 transition-all">
+                                阅读全文 <i class="fa-solid fa-arrow-right w-4 h-4"></i>
+                            </a>
+                        </div>
+                    </div>
+                `;
+                newsGrid.appendChild(card);
+            });
+            renderPagination(totalPages);
+        }
+
+        // 分页组件样式完全tailwind
+        function renderPagination(totalPages) {
+            if (totalPages <= 1) {
+                paginationContainer.innerHTML = "";
+                return;
+            }
+            let paginationHtml = `<div class="flex gap-2 flex-wrap justify-center">`;
+            paginationHtml += `<button data-page="prev" class="px-4 py-2 rounded-full border border-slate-300 dark:border-slate-600 hover:bg-primary-100 dark:hover:bg-primary-800/40 transition ${currentPage === 1 ? 'opacity-50 cursor-not-allowed' : ''}" ${currentPage === 1 ? 'disabled' : ''}>上一页</button>`;
+            let startPage = Math.max(1, currentPage - 2);
+            let endPage = Math.min(totalPages, startPage + 4);
+            if (endPage - startPage < 4) startPage = Math.max(1, endPage - 4);
+            for (let i = startPage; i <= endPage; i++) {
+                paginationHtml += `<button data-page="${i}" class="px-4 py-2 rounded-full border transition ${i === currentPage ? 'bg-primary-600 text-white border-primary-600' : 'border-slate-300 dark:border-slate-600 hover:bg-primary-100 dark:hover:bg-primary-800/40'}">${i}</button>`;
+            }
+            paginationHtml += `<button data-page="next" class="px-4 py-2 rounded-full border border-slate-300 dark:border-slate-600 hover:bg-primary-100 dark:hover:bg-primary-800/40 transition ${currentPage === totalPages ? 'opacity-50 cursor-not-allowed' : ''}" ${currentPage === totalPages ? 'disabled' : ''}>下一页</button>`;
+            paginationHtml += `</div>`;
+            paginationContainer.innerHTML = paginationHtml;
+
+            document.querySelectorAll("[data-page]").forEach(btn => {
+                btn.addEventListener("click", (e) => {
+                    const pageVal = btn.getAttribute("data-page");
+                    if (pageVal === "prev" && currentPage > 1) {
+                        currentPage--;
+                        renderNews();
+                        window.scrollTo({ top: document.querySelector(".category-filter").offsetTop - 100, behavior: "smooth" });
+                    } else if (pageVal === "next" && currentPage < totalPages) {
+                        currentPage++;
+                        renderNews();
+                        window.scrollTo({ top: document.querySelector(".category-filter").offsetTop - 100, behavior: "smooth" });
+                    } else if (!isNaN(parseInt(pageVal))) {
+                        currentPage = parseInt(pageVal);
+                        renderNews();
+                        window.scrollTo({ top: document.querySelector(".category-filter").offsetTop - 100, behavior: "smooth" });
+                    }
+                });
+            });
+        }
+
+        // 分类点击
+        function bindCategoryEvents() {
+            categoryBtns.forEach(btn => {
+                btn.addEventListener("click", () => {
+                    const category = btn.getAttribute("data-category");
+                    if (category === currentCategory) return;
+                    currentCategory = category;
+                    currentPage = 1;
+                    updateCategoryActive();
+                    renderNews();
+                });
+            });
+        }
+
+        // 搜索防抖
+        let debounceTimer;
+        searchInput.addEventListener("input", (e) => {
+            clearTimeout(debounceTimer);
+            debounceTimer = setTimeout(() => {
+                currentKeyword = e.target.value;
+                currentPage = 1;
+                renderNews();
+            }, 300);
+        });
+
+        // 深色模式
+        const themeToggle = document.getElementById('theme-toggle');
+        const htmlElem = document.documentElement;
+        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            htmlElem.classList.add('dark');
+        } else {
+            htmlElem.classList.remove('dark');
+        }
+        themeToggle.addEventListener('click', () => {
+            htmlElem.classList.toggle('dark');
+            localStorage.theme = htmlElem.classList.contains('dark') ? 'dark' : 'light';
+        });
+        // 移动端菜单
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+        const mobileLinks = mobileMenu.querySelectorAll('a');
+        mobileLinks.forEach(link => link.addEventListener('click', () => mobileMenu.classList.add('hidden')));
+
+        // 初始化
+        updateCategoryActive();
+        bindCategoryEvents();
+        renderNews();
+    </script>
+</body>
+
+</html>
