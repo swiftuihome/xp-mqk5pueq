@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>联系我们 - 康禾医疗客服与就诊指南</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome 6 CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Tailwind 配置 -->
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            50: '#fff7ed',
+                            100: '#ffedd5',
+                            200: '#fed7aa',
+                            300: '#fdba74',
+                            400: '#fb923c',
+                            500: '#f97316',
+                            600: '#ea580c',
+                            700: '#c2410c',
+                            800: '#9a3412',
+                            900: '#7c2d12',
+                        },
+                        gray: {
+                            400: '#b8bfc0',
+                            500: '#94a3b8',
+                            600: '#64748b',
+                            700: '#334155',
+                            800: '#1e293b',
+                            900: '#0f172a',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .content-auto {
+                content-visibility: auto;
+            }
+            .transition-theme {
+                transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-slate-50 dark:bg-slate-900 text-slate-800 dark:text-slate-200 font-sans transition-theme antialiased">
+    <!-- 导航栏 (完全保持与首页一致的风格) -->
+    <header
+        class="border-b border-slate-200 dark:border-slate-700 bg-white/90 dark:bg-slate-900/90 backdrop-blur-sm sticky top-0 z-50 transition-theme">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
+            <!-- Logo -->
+            <div class="flex items-center gap-3">
+                <div class="w-12 h-12 rounded-lg bg-primary-500 flex items-center justify-center text-white shadow-md">
+                    <i class="fa-solid fa-heart-pulse text-xl"></i>
+                </div>
+                <span class="font-semibold text-2xl tracking-tight text-primary-600 dark:text-primary-400">康禾医疗</span>
+            </div>
+
+            <!-- 桌面端导航 -->
+            <nav class="hidden md:flex items-center gap-8">
+                <a href="index.html"
+                    class="text-slate-700 dark:text-slate-300 hover:text-primary-600 dark:hover:text-primary-400 font-medium transition-theme py-2">首页</a>
+                <!-- 医疗服务下拉 -->
+                <div class="relative group">
+                    <button
+                        class="flex items-center gap-1 text-slate-700 dark:text-slate-300 hover:text-primary-600 dark:hover:text-primary-400 font-medium transition-theme py-2">
+                        医疗服务
+                        <i class="fa-solid fa-chevron-down w-4 h-4 group-hover:rotate-180 transition-transform"></i>
+                    </button>
+                    <div
+                        class="absolute left-0 mt-1 w-64 bg-white/95 dark:bg-slate-800/95 backdrop-blur-sm rounded-xl shadow-lg border border-slate-200 dark:border-slate-700 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                        <div class="py-2">
+                            <a href="service-1.html"
+                                class="block px-5 py-2 hover:bg-slate-100 dark:hover:bg-slate-700 hover:text-primary-600 transition-theme">体检中心</a>
+                            <a href="service-2.html"
+                                class="block px-5 py-2 hover:bg-slate-100 dark:hover:bg-slate-700 hover:text-primary-600 transition-theme">专科诊疗</a>
+                            <a href="service-3.html"
+                                class="block px-5 py-2 hover:bg-slate-100 dark:hover:bg-slate-700 hover:text-primary-600 transition-theme">远程问诊</a>
+                            <a href="service-4.html"
+                                class="block px-5 py-2 hover:bg-slate-100 dark:hover:bg-slate-700 hover:text-primary-600 transition-theme">健康管理</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- 关于我们下拉 -->
+                <div class="relative group">
+                    <button
+                        class="flex items-center gap-1 text-slate-700 dark:text-slate-300 hover:text-primary-600 dark:hover:text-primary-400 font-medium transition-theme py-2">
+                        关于我们
+                        <i class="fa-solid fa-chevron-down w-4 h-4 group-hover:rotate-180 transition-transform"></i>
+                    </button>
+                    <div
+                        class="absolute left-0 mt-1 w-64 bg-white/95 dark:bg-slate-800/95 backdrop-blur-sm rounded-xl shadow-lg border border-slate-200 dark:border-slate-700 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                        <div class="py-2">
+                            <a href="about.html"
+                                class="block px-5 py-2 hover:bg-slate-100 dark:hover:bg-slate-700 hover:text-primary-600 transition-theme">医院介绍</a>
+                            <a href="team.html"
+                                class="block px-5 py-2 hover:bg-slate-100 dark:hover:bg-slate-700 hover:text-primary-600 transition-theme">专家团队</a>
+                            <a href="honor.html"
+                                class="block px-5 py-2 hover:bg-slate-100 dark:hover:bg-slate-700 hover:text-primary-600 transition-theme">荣誉资质</a>
+                        </div>
+                    </div>
+                </div>
+                <a href="news.html"
+                    class="text-slate-700 dark:text-slate-300 hover:text-primary-600 dark:hover:text-primary-400 font-medium transition-theme py-2">新闻动态</a>
+                <a href="contact.html"
+                    class="text-primary-600 dark:text-primary-400 font-medium border-b-2 border-primary-500 py-2">联系我们</a>
+            </nav>
+
+            <!-- 右侧功能区 -->
+            <div class="flex items-center gap-4">
+                <button id="theme-toggle" aria-label="切换深色/浅色模式"
+                    class="p-2 rounded-full text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-theme">
+                    <i class="fa-solid fa-sun w-5 h-5 hidden dark:block"></i>
+                    <i class="fa-solid fa-moon w-5 h-5 block dark:hidden"></i>
+                </button>
+                <button id="mobile-menu-btn" aria-label="菜单"
+                    class="md:hidden p-2 rounded-full text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-theme">
+                    <i class="fa-solid fa-bars w-6 h-6"></i>
+                </button>
+                <a href="appointment.html"
+                    class="hidden md:inline-block bg-primary-600 hover:bg-primary-700 dark:bg-primary-500 dark:hover:bg-primary-600 text-white text-sm font-semibold px-5 py-2.5 rounded-full shadow-sm transition-theme">
+                    立即预约
+                </a>
+            </div>
+        </div>
+
+        <!-- 移动端菜单 -->
+        <div id="mobile-menu"
+            class="md:hidden hidden bg-white/95 dark:bg-slate-900/95 backdrop-blur-sm border-t border-slate-200 dark:border-slate-700 px-4 py-4 shadow-lg transition-theme">
+            <div class="flex flex-col gap-3">
+                <a href="index.html"
+                    class="py-2 text-slate-700 dark:text-slate-300 font-medium hover:text-primary-600 transition-theme">首页</a>
+                <details class="group">
+                    <summary
+                        class="flex justify-between items-center cursor-pointer list-none py-2 text-slate-700 dark:text-slate-300 font-medium">
+                        医疗服务 <i class="fa-solid fa-chevron-down w-5 h-5 group-open:rotate-180 transition-transform"></i>
+                    </summary>
+                    <div class="pl-4 mt-2 flex flex-col gap-2 text-slate-600 dark:text-slate-400 text-sm">
+                        <a href="service-1.html" class="py-1 hover:text-primary-600">体检中心</a>
+                        <a href="service-2.html" class="py-1 hover:text-primary-600">专科诊疗</a>
+                        <a href="service-3.html" class="py-1 hover:text-primary-600">远程问诊</a>
+                        <a href="service-4.html" class="py-1 hover:text-primary-600">健康管理</a>
+                    </div>
+                </details>
+                <details class="group">
+                    <summary
+                        class="flex justify-between items-center cursor-pointer list-none py-2 text-slate-700 dark:text-slate-300 font-medium">
+                        关于我们 <i class="fa-solid fa-chevron-down w-5 h-5 group-open:rotate-180 transition-transform"></i>
+                    </summary>
+                    <div class="pl-4 mt-2 flex flex-col gap-2 text-slate-600 dark:text-slate-400 text-sm">
+                        <a href="about.html" class="py-1 hover:text-primary-600">医院介绍</a>
+                        <a href="team.html" class="py-1 hover:text-primary-600">专家团队</a>
+                        <a href="honor.html" class="py-1 hover:text-primary-600">荣誉资质</a>
+                    </div>
+                </details>
+                <a href="news.html"
+                    class="py-2 text-slate-700 dark:text-slate-300 font-medium hover:text-primary-600 transition-theme">新闻动态</a>
+                <a href="contact.html" class="py-2 text-primary-600 dark:text-primary-400 font-medium">联系我们</a>
+                <div class="pt-2">
+                    <a href="appointment.html"
+                        class="block text-center bg-primary-600 hover:bg-primary-700 dark:bg-primary-500 text-white text-sm font-semibold px-5 py-2.5 rounded-full shadow-sm">立即预约</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- 页面标题 Banner -->
+        <section
+            class="bg-gradient-to-r from-primary-50 to-slate-100 dark:from-primary-900/20 dark:to-slate-800/50 py-12 md:py-16 transition-theme">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h1 class="text-4xl md:text-5xl font-light text-slate-900 dark:text-white mb-4">联系我们</h1>
+                <p class="text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">专业团队为您提供全方位医疗咨询与服务支持，期待您的到来</p>
+            </div>
+        </section>
+
+        <!-- 联系信息卡片区 (三大板块) -->
+        <section class="py-12 md:py-16 transition-theme">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+                    <!-- 就诊咨询 -->
+                    <div
+                        class="bg-white dark:bg-slate-800 rounded-2xl p-6 shadow-sm border border-slate-200 dark:border-slate-700 text-center hover:shadow-md transition-theme">
+                        <div
+                            class="w-16 h-16 bg-primary-100 dark:bg-primary-900/30 rounded-full flex items-center justify-center mx-auto mb-5 text-primary-600 dark:text-primary-400">
+                            <i class="fa-solid fa-phone-volume text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-slate-800 dark:text-slate-100 mb-2">就诊咨询</h3>
+                        <p class="text-slate-500 dark:text-slate-400 text-sm mb-3">预约挂号 / 科室导诊 / 体检套餐</p>
+                        <p class="text-2xl font-bold text-primary-600 dark:text-primary-400 mb-2">400-888-9999</p>
+                        <p class="text-xs text-slate-400">周一至周日 8:00 - 20:00</p>
+                    </div>
+                    <!-- 急诊/24h热线 -->
+                    <div
+                        class="bg-white dark:bg-slate-800 rounded-2xl p-6 shadow-sm border border-slate-200 dark:border-slate-700 text-center hover:shadow-md transition-theme">
+                        <div
+                            class="w-16 h-16 bg-red-100 dark:bg-red-900/30 rounded-full flex items-center justify-center mx-auto mb-5 text-red-600 dark:text-red-400">
+                            <i class="fa-solid fa-truck-medical text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-slate-800 dark:text-slate-100 mb-2">急诊/急救通道</h3>
+                        <p class="text-slate-500 dark:text-slate-400 text-sm mb-3">24小时急诊服务 | 绿色通道</p>
+                        <p class="text-2xl font-bold text-red-600 dark:text-red-400 mb-2">120 转 康禾急救</p>
+                        <p class="text-xs text-slate-400">全天候守护生命</p>
+                    </div>
+                    <!-- 合作/商务 -->
+                    <div
+                        class="bg-white dark:bg-slate-800 rounded-2xl p-6 shadow-sm border border-slate-200 dark:border-slate-700 text-center hover:shadow-md transition-theme">
+                        <div
+                            class="w-16 h-16 bg-emerald-100 dark:bg-emerald-900/30 rounded-full flex items-center justify-center mx-auto mb-5 text-emerald-600 dark:text-emerald-400">
+                            <i class="fa-solid fa-handshake text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-slate-800 dark:text-slate-100 mb-2">商务合作</h3>
+                        <p class="text-slate-500 dark:text-slate-400 text-sm mb-3">市场合作 / 转诊洽谈 / 公益联动</p>
+                        <p class="text-xl font-semibold text-emerald-600 dark:text-emerald-400">cooperation@kanghe.com
+                        </p>
+                        <p class="text-xs text-slate-400 mt-2">工作日 9:00-18:00</p>
+                    </div>
+                </div>
+
+                <!-- 地图与院区详情 + 联系表单 两栏布局 -->
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+                    <!-- 左侧：地图与院区信息 -->
+                    <div class="space-y-8">
+                        <!-- 地图容器（嵌入高德/静态地图模拟，实际可使用iframe） -->
+                        <div
+                            class="bg-white dark:bg-slate-800 rounded-2xl shadow-sm border border-slate-200 dark:border-slate-700 overflow-hidden">
+                            <div class="h-64 md:h-80 w-full bg-slate-200 dark:bg-slate-700 relative">
+                                <!-- 模拟地图：展示医院位置，使用静态图片或实际地图组件，此处使用iframe占位（高德地图静态图） -->
+                                <iframe class="w-full h-full" frameborder="0" scrolling="no" marginheight="0"
+                                    marginwidth="0"
+                                    src="https://uri.amap.com/marker?position=116.480983,39.904211&name=康禾医疗大厦&src=mypage&coordinate=gaode&callnative=0"
+                                    title="康禾医疗地图位置"></iframe>
+                            </div>
+                            <div class="p-6 border-t border-slate-100 dark:border-slate-700">
+                                <div class="flex items-start gap-4">
+                                    <i class="fa-solid fa-location-dot text-primary-500 text-xl mt-1"></i>
+                                    <div>
+                                        <h4 class="font-semibold text-slate-800 dark:text-slate-200">康禾医疗总院地址</h4>
+                                        <p class="text-slate-600 dark:text-slate-400 text-sm mt-1">
+                                            北京市朝阳区建国路88号康禾医疗大厦（地铁1号线/14号线大望路站F口出，步行300米）</p>
+                                        <div class="flex gap-4 mt-3">
+                                            <a href="#"
+                                                class="text-primary-600 dark:text-primary-400 text-sm inline-flex items-center gap-1"><i
+                                                    class="fa-solid fa-car"></i> 驾车导航</a>
+                                            <a href="#"
+                                                class="text-primary-600 dark:text-primary-400 text-sm inline-flex items-center gap-1"><i
+                                                    class="fa-solid fa-bus"></i> 公交路线</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 院区分部列表 -->
+                        <div
+                            class="bg-white dark:bg-slate-800 rounded-2xl p-6 shadow-sm border border-slate-200 dark:border-slate-700">
+                            <h3
+                                class="text-xl font-semibold text-slate-800 dark:text-slate-100 mb-4 flex items-center gap-2">
+                                <i class="fa-solid fa-building text-primary-500"></i> 院区分部</h3>
+                            <div class="space-y-4">
+                                <div
+                                    class="flex flex-col sm:flex-row sm:justify-between gap-2 border-b border-slate-100 dark:border-slate-700 pb-3">
+                                    <span class="font-medium">朝阳总院</span>
+                                    <span class="text-slate-500 dark:text-slate-400 text-sm">北京市朝阳区建国路88号</span>
+                                    <span class="text-primary-600 text-sm">010-5678 1234</span>
+                                </div>
+                                <div
+                                    class="flex flex-col sm:flex-row sm:justify-between gap-2 border-b border-slate-100 dark:border-slate-700 pb-3">
+                                    <span class="font-medium">海淀分院</span>
+                                    <span class="text-slate-500 dark:text-slate-400 text-sm">海淀区中关村大街甲28号</span>
+                                    <span class="text-primary-600 text-sm">010-5678 5678</span>
+                                </div>
+                                <div class="flex flex-col sm:flex-row sm:justify-between gap-2">
+                                    <span class="font-medium">通州健康管理中心</span>
+                                    <span class="text-slate-500 dark:text-slate-400 text-sm">通州区新华西街15号</span>
+                                    <span class="text-primary-600 text-sm">010-5678 9999</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 其他联系方式 -->
+                        <div
+                            class="bg-white dark:bg-slate-800 rounded-2xl p-6 shadow-sm border border-slate-200 dark:border-slate-700">
+                            <h3
+                                class="text-xl font-semibold text-slate-800 dark:text-slate-100 mb-4 flex items-center gap-2">
+                                <i class="fa-regular fa-envelope text-primary-500"></i> 其他联系方式</h3>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div>
+                                    <p class="text-slate-500 text-sm">投诉建议邮箱</p>
+                                    <p class="font-mono text-sm">feedback@kanghe.com</p>
+                                </div>
+                                <div>
+                                    <p class="text-slate-500 text-sm">人力资源部</p>
+                                    <p class="font-mono text-sm">hr@kanghe.com</p>
+                                </div>
+                                <div>
+                                    <p class="text-slate-500 text-sm">媒体合作</p>
+                                    <p class="font-mono text-sm">media@kanghe.com</p>
+                                </div>
+                                <div>
+                                    <p class="text-slate-500 text-sm">官方公众号</p>
+                                    <p class="font-mono text-sm">康禾医疗健康管家</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 右侧：在线留言表单 -->
+                    <div
+                        class="bg-white dark:bg-slate-800 rounded-2xl shadow-sm border border-slate-200 dark:border-slate-700 p-6 md:p-8">
+                        <div class="mb-6">
+                            <h2 class="text-2xl font-semibold text-slate-800 dark:text-slate-100">在线留言</h2>
+                            <p class="text-slate-500 dark:text-slate-400 text-sm mt-1">请填写以下信息，我们将在24小时内与您联系</p>
+                        </div>
+                        <form id="contactForm" action="#" method="POST">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-5 mb-5">
+                                <div>
+                                    <label
+                                        class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1">您的姓名
+                                        <span class="text-red-500">*</span></label>
+                                    <input type="text" id="name" required
+                                        class="w-full px-4 py-2.5 rounded-xl border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-900 text-slate-800 dark:text-slate-200 focus:ring-2 focus:ring-primary-400 focus:outline-none transition-theme">
+                                </div>
+                                <div>
+                                    <label
+                                        class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1">联系电话
+                                        <span class="text-red-500">*</span></label>
+                                    <input type="tel" id="phone" required
+                                        class="w-full px-4 py-2.5 rounded-xl border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-900 text-slate-800 dark:text-slate-200 focus:ring-2 focus:ring-primary-400 focus:outline-none transition-theme">
+                                </div>
+                            </div>
+                            <div class="mb-5">
+                                <label
+                                    class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1">电子邮箱</label>
+                                <input type="email" id="email"
+                                    class="w-full px-4 py-2.5 rounded-xl border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-900 text-slate-800 dark:text-slate-200 focus:ring-2 focus:ring-primary-400 focus:outline-none transition-theme">
+                            </div>
+                            <div class="mb-5">
+                                <label
+                                    class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1">咨询主题</label>
+                                <select id="subject"
+                                    class="w-full px-4 py-2.5 rounded-xl border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-900 text-slate-800 dark:text-slate-200 focus:ring-2 focus:ring-primary-400 focus:outline-none transition-theme">
+                                    <option value="预约挂号">预约挂号</option>
+                                    <option value="体检咨询">体检咨询</option>
+                                    <option value="专家问询">专家问询</option>
+                                    <option value="合作建议">合作建议</option>
+                                    <option value="其他">其他</option>
+                                </select>
+                            </div>
+                            <div class="mb-6">
+                                <label class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1">留言内容
+                                    <span class="text-red-500">*</span></label>
+                                <textarea id="message" rows="4" required
+                                    class="w-full px-4 py-2.5 rounded-xl border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-900 text-slate-800 dark:text-slate-200 focus:ring-2 focus:ring-primary-400 focus:outline-none transition-theme"
+                                    placeholder="请详细描述您的问题或需求..."></textarea>
+                            </div>
+                            <button type="submit"
+                                class="w-full bg-primary-600 hover:bg-primary-700 dark:bg-primary-500 dark:hover:bg-primary-600 text-white font-semibold py-3 rounded-xl shadow-md transition-all duration-200 flex items-center justify-center gap-2">
+                                <i class="fa-regular fa-paper-plane"></i> 提交留言
+                            </button>
+                            <p class="text-xs text-center text-slate-400 mt-4">我们会严格保护您的隐私，信息仅用于沟通回复</p>
+                        </form>
+                        <!-- 表单提交成功提示区域 -->
+                        <div id="formSuccessMsg"
+                            class="hidden mt-4 p-3 bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300 rounded-xl text-sm text-center">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 常见问题 FAQ 区域 -->
+        <section class="bg-slate-100 dark:bg-slate-800/30 py-16 transition-theme">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-light text-slate-900 dark:text-white mb-3">常见问题</h2>
+                    <p class="text-slate-600 dark:text-slate-400">快速解答您可能遇到的疑问</p>
+                </div>
+                <div class="max-w-3xl mx-auto space-y-4">
+                    <!-- 问题1 -->
+                    <div
+                        class="bg-white dark:bg-slate-800 rounded-xl shadow-sm border border-slate-200 dark:border-slate-700">
+                        <details class="group">
+                            <summary
+                                class="flex justify-between items-center cursor-pointer list-none p-5 font-semibold text-slate-800 dark:text-slate-200">
+                                如何预约挂号？
+                                <i
+                                    class="fa-solid fa-chevron-down text-primary-500 transition-transform group-open:rotate-180"></i>
+                            </summary>
+                            <p
+                                class="px-5 pb-5 text-slate-600 dark:text-slate-400 text-sm border-t border-slate-100 dark:border-slate-700 pt-3">
+                                您可以通过拨打热线 400-888-9999、官网在线预约或关注“康禾医疗健康管家”公众号进行线上挂号，预约后会有专员确认就诊时间。</p>
+                        </details>
+                    </div>
+                    <!-- 问题2 -->
+                    <div
+                        class="bg-white dark:bg-slate-800 rounded-xl shadow-sm border border-slate-200 dark:border-slate-700">
+                        <details class="group">
+                            <summary
+                                class="flex justify-between items-center cursor-pointer list-none p-5 font-semibold text-slate-800 dark:text-slate-200">
+                                体检报告多久可以出具？
+                                <i
+                                    class="fa-solid fa-chevron-down text-primary-500 transition-transform group-open:rotate-180"></i>
+                            </summary>
+                            <p
+                                class="px-5 pb-5 text-slate-600 dark:text-slate-400 text-sm border-t border-slate-100 dark:border-slate-700 pt-3">
+                                常规体检报告在检查后3-5个工作日出具，加急报告可在24小时内出具（部分项目除外），电子报告可在公众号或官网查询。</p>
+                        </details>
+                    </div>
+                    <!-- 问题3 -->
+                    <div
+                        class="bg-white dark:bg-slate-800 rounded-xl shadow-sm border border-slate-200 dark:border-slate-700">
+                        <details class="group">
+                            <summary
+                                class="flex justify-between items-center cursor-pointer list-none p-5 font-semibold text-slate-800 dark:text-slate-200">
+                                是否可以异地医保报销？
+                                <i
+                                    class="fa-solid fa-chevron-down text-primary-500 transition-transform group-open:rotate-180"></i>
+                            </summary>
+                            <p
+                                class="px-5 pb-5 text-slate-600 dark:text-slate-400 text-sm border-t border-slate-100 dark:border-slate-700 pt-3">
+                                我院支持全国异地医保直接结算（具体视当地医保政策），来院前可致电医保办咨询备案流程。</p>
+                        </details>
+                    </div>
+                    <!-- 问题4 -->
+                    <div
+                        class="bg-white dark:bg-slate-800 rounded-xl shadow-sm border border-slate-200 dark:border-slate-700">
+                        <details class="group">
+                            <summary
+                                class="flex justify-between items-center cursor-pointer list-none p-5 font-semibold text-slate-800 dark:text-slate-200">
+                                周末专家门诊是否开放？
+                                <i
+                                    class="fa-solid fa-chevron-down text-primary-500 transition-transform group-open:rotate-180"></i>
+                            </summary>
+                            <p
+                                class="px-5 pb-5 text-slate-600 dark:text-slate-400 text-sm border-t border-slate-100 dark:border-slate-700 pt-3">
+                                我院周六、周日全天开放专家门诊及普通门诊，具体排班可在预约平台查询或电话咨询。</p>
+                        </details>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 快速导航至预约 -->
+        <section class="py-12 bg-primary-600 dark:bg-primary-700 transition-theme">
+            <div class="max-w-4xl mx-auto text-center px-4">
+                <h3 class="text-2xl md:text-3xl font-light text-white mb-3">需要立即就诊？</h3>
+                <p class="text-primary-100 mb-6">提前预约免排队，专家一对一精准诊疗</p>
+                <a href="appointment.html"
+                    class="inline-block bg-white text-primary-600 hover:bg-primary-50 font-semibold px-8 py-3 rounded-full shadow-md transition-all">立即预约</a>
+            </div>
+        </section>
+    </main>
+
+    <!-- 页脚 (与首页完全一致) -->
+    <footer class="bg-slate-900 text-slate-300 py-12 transition-theme">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-10 h-10 rounded-lg bg-primary-500 flex items-center justify-center text-white"><i
+                                class="fa-solid fa-heart-pulse"></i></div>
+                        <span class="font-semibold text-xl text-white">康禾医疗</span>
+                    </div>
+                    <p class="text-slate-400 text-sm">专业的医疗服务提供商，致力于高品质健康管理。</p>
+                </div>
+                <div>
+                    <h4 class="text-white font-medium mb-3">快捷导航</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="index.html" class="text-slate-400 hover:text-primary-400">首页</a></li>
+                        <li><a href="about.html" class="text-slate-400 hover:text-primary-400">关于我们</a></li>
+                        <li><a href="service-1.html" class="text-slate-400 hover:text-primary-400">医疗服务</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-medium mb-3">帮助中心</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#" class="text-slate-400 hover:text-primary-400">隐私政策</a></li>
+                        <li><a href="#" class="text-slate-400 hover:text-primary-400">使用条款</a></li>
+                        <li><a href="contact.html" class="text-slate-400 hover:text-primary-400">网站地图</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-medium mb-3">关注我们</h4>
+                    <div class="flex gap-4">
+                        <a href="#" class="text-slate-400 hover:text-primary-400 text-xl"><i
+                                class="fa-brands fa-weixin"></i></a>
+                        <a href="#" class="text-slate-400 hover:text-primary-400 text-xl"><i
+                                class="fa-brands fa-weibo"></i></a>
+                        <a href="#" class="text-slate-400 hover:text-primary-400 text-xl"><i
+                                class="fa-brands fa-tiktok"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-slate-800 pt-6 text-center text-slate-500 text-xs">© 2025 康禾医疗 版权所有 |
+                京ICP备12345678号-1</div>
+        </div>
+    </footer>
+
+    <script>
+        // 深色模式切换
+        const themeToggle = document.getElementById('theme-toggle');
+        const html = document.documentElement;
+        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            html.classList.add('dark');
+        } else {
+            html.classList.remove('dark');
+        }
+        themeToggle.addEventListener('click', () => {
+            html.classList.toggle('dark');
+            localStorage.theme = html.classList.contains('dark') ? 'dark' : 'light';
+        });
+
+        // 移动端菜单
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+        const mobileLinks = mobileMenu.querySelectorAll('a');
+        mobileLinks.forEach(link => link.addEventListener('click', () => mobileMenu.classList.add('hidden')));
+
+        // 表单提交逻辑 (前端模拟提交，无后端)
+        const contactForm = document.getElementById('contactForm');
+        const successDiv = document.getElementById('formSuccessMsg');
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            // 简单前端验证
+            const name = document.getElementById('name').value.trim();
+            const phone = document.getElementById('phone').value.trim();
+            const message = document.getElementById('message').value.trim();
+            if (!name || !phone || !message) {
+                alert('请填写姓名、联系电话和留言内容（必填）。');
+                return;
+            }
+            // 模拟提交成功效果
+            successDiv.innerHTML = '✓ 感谢您的留言，康禾医疗客服会尽快与您取得联系！';
+            successDiv.classList.remove('hidden');
+            contactForm.reset();
+            setTimeout(() => {
+                successDiv.classList.add('hidden');
+            }, 5000);
+        });
+    </script>
+</body>
+
+</html>
