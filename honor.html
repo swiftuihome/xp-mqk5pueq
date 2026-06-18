@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>荣誉资质 - 康禾医疗 · 权威认证 品质保障</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome 6 CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Tailwind 配置 -->
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            50: '#fff7ed',
+                            100: '#ffedd5',
+                            200: '#fed7aa',
+                            300: '#fdba74',
+                            400: '#fb923c',
+                            500: '#f97316',
+                            600: '#ea580c',
+                            700: '#c2410c',
+                            800: '#9a3412',
+                            900: '#7c2d12',
+                        },
+                        gray: {
+                            400: '#b8bfc0',
+                            500: '#94a3b8',
+                            600: '#64748b',
+                            700: '#334155',
+                            800: '#1e293b',
+                            900: '#0f172a',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .content-auto {
+                content-visibility: auto;
+            }
+            .transition-theme {
+                transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-slate-50 dark:bg-slate-900 text-slate-800 dark:text-slate-200 font-sans transition-theme antialiased">
+    <!-- 导航栏 (与全站风格保持一致) -->
+    <header
+        class="border-b border-slate-200 dark:border-slate-700 bg-white/90 dark:bg-slate-900/90 backdrop-blur-sm sticky top-0 z-50 transition-theme">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <div class="w-12 h-12 rounded-lg bg-primary-500 flex items-center justify-center text-white shadow-md">
+                    <i class="fa-solid fa-heart-pulse text-xl"></i>
+                </div>
+                <span class="font-semibold text-2xl tracking-tight text-primary-600 dark:text-primary-400">康禾医疗</span>
+            </div>
+            <nav class="hidden md:flex items-center gap-8">
+                <a href="index.html"
+                    class="text-slate-700 dark:text-slate-300 hover:text-primary-600 font-medium transition-theme py-2">首页</a>
+                <div class="relative group">
+                    <button
+                        class="flex items-center gap-1 text-slate-700 dark:text-slate-300 hover:text-primary-600 font-medium transition-theme py-2">
+                        医疗服务 <i class="fa-solid fa-chevron-down w-4 h-4 group-hover:rotate-180 transition-transform"></i>
+                    </button>
+                    <div
+                        class="absolute left-0 mt-1 w-64 bg-white/95 dark:bg-slate-800/95 backdrop-blur-sm rounded-xl shadow-lg border border-slate-200 dark:border-slate-700 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                        <div class="py-2">
+                            <a href="service-1.html"
+                                class="block px-5 py-2 hover:bg-slate-100 dark:hover:bg-slate-700 hover:text-primary-600">体检中心</a>
+                            <a href="service-2.html"
+                                class="block px-5 py-2 hover:bg-slate-100 dark:hover:bg-slate-700 hover:text-primary-600">专科诊疗</a>
+                            <a href="service-3.html"
+                                class="block px-5 py-2 hover:bg-slate-100 dark:hover:bg-slate-700 hover:text-primary-600">远程问诊</a>
+                            <a href="service-4.html"
+                                class="block px-5 py-2 hover:bg-slate-100 dark:hover:bg-slate-700 hover:text-primary-600">健康管理</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="relative group">
+                    <button
+                        class="flex items-center gap-1 text-slate-700 dark:text-slate-300 hover:text-primary-600 font-medium transition-theme py-2">
+                        关于我们 <i class="fa-solid fa-chevron-down w-4 h-4 group-hover:rotate-180 transition-transform"></i>
+                    </button>
+                    <div
+                        class="absolute left-0 mt-1 w-64 bg-white/95 dark:bg-slate-800/95 backdrop-blur-sm rounded-xl shadow-lg border border-slate-200 dark:border-slate-700 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                        <div class="py-2">
+                            <a href="about.html"
+                                class="block px-5 py-2 hover:bg-slate-100 dark:hover:bg-slate-700 hover:text-primary-600">医院介绍</a>
+                            <a href="team.html"
+                                class="block px-5 py-2 hover:bg-slate-100 dark:hover:bg-slate-700 hover:text-primary-600">专家团队</a>
+                            <a href="honor.html"
+                                class="block px-5 py-2 hover:bg-slate-100 dark:hover:bg-slate-700 hover:text-primary-600">荣誉资质</a>
+                        </div>
+                    </div>
+                </div>
+                <a href="news.html"
+                    class="text-slate-700 dark:text-slate-300 hover:text-primary-600 font-medium transition-theme py-2">新闻动态</a>
+                <a href="contact.html"
+                    class="text-slate-700 dark:text-slate-300 hover:text-primary-600 font-medium transition-theme py-2">联系我们</a>
+            </nav>
+            <div class="flex items-center gap-4">
+                <button id="theme-toggle" aria-label="切换深色/浅色模式"
+                    class="p-2 rounded-full text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-theme">
+                    <i class="fa-solid fa-sun w-5 h-5 hidden dark:block"></i>
+                    <i class="fa-solid fa-moon w-5 h-5 block dark:hidden"></i>
+                </button>
+                <button id="mobile-menu-btn" aria-label="菜单"
+                    class="md:hidden p-2 rounded-full text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-theme">
+                    <i class="fa-solid fa-bars w-6 h-6"></i>
+                </button>
+                <a href="appointment.html"
+                    class="hidden md:inline-block bg-primary-600 hover:bg-primary-700 dark:bg-primary-500 dark:hover:bg-primary-600 text-white text-sm font-semibold px-5 py-2.5 rounded-full shadow-sm transition-theme">立即预约</a>
+            </div>
+        </div>
+        <div id="mobile-menu"
+            class="md:hidden hidden bg-white/95 dark:bg-slate-900/95 backdrop-blur-sm border-t border-slate-200 dark:border-slate-700 px-4 py-4 shadow-lg transition-theme">
+            <div class="flex flex-col gap-3">
+                <a href="index.html" class="py-2 font-medium hover:text-primary-600">首页</a>
+                <details class="group">
+                    <summary class="flex justify-between items-center cursor-pointer list-none py-2 font-medium">医疗服务 <i
+                            class="fa-solid fa-chevron-down group-open:rotate-180 transition-transform"></i></summary>
+                    <div class="pl-4 mt-2 flex flex-col gap-2 text-sm"><a href="service-1.html">体检中心</a><a
+                            href="service-2.html">专科诊疗</a><a href="service-3.html">远程问诊</a><a
+                            href="service-4.html">健康管理</a></div>
+                </details>
+                <details class="group">
+                    <summary class="flex justify-between items-center cursor-pointer list-none py-2 font-medium">关于我们 <i
+                            class="fa-solid fa-chevron-down group-open:rotate-180 transition-transform"></i></summary>
+                    <div class="pl-4 mt-2 flex flex-col gap-2 text-sm"><a href="about.html">医院介绍</a><a
+                            href="team.html">专家团队</a><a href="honor.html">荣誉资质</a></div>
+                </details>
+                <a href="news.html" class="py-2 font-medium hover:text-primary-600">新闻动态</a>
+                <a href="contact.html" class="py-2 font-medium hover:text-primary-600">联系我们</a>
+                <div class="pt-2"><a href="appointment.html"
+                        class="block text-center bg-primary-600 text-white text-sm font-semibold px-5 py-2.5 rounded-full">立即预约</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- 页面标题区 -->
+        <section
+            class="bg-gradient-to-r from-primary-50 to-slate-100 dark:from-primary-900/20 dark:to-slate-800/50 py-12 md:py-16 transition-theme">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h1 class="text-4xl md:text-5xl font-light text-slate-900 dark:text-white mb-4">荣誉资质</h1>
+                <p class="text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">权威认证 · 行业标杆 · 匠心医疗</p>
+            </div>
+        </section>
+
+        <!-- 荣誉统计数字 -->
+        <section class="py-10 bg-white dark:bg-slate-800/40 border-b border-slate-200 dark:border-slate-700">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+                    <div><div class="text-3xl md:text-4xl font-bold text-primary-600 dark:text-primary-400">12</div><div class="text-sm text-slate-500 mt-1">国家级荣誉</div></div>
+                    <div><div class="text-3xl md:text-4xl font-bold text-primary-600 dark:text-primary-400">30+</div><div class="text-sm text-slate-500 mt-1">省级/行业奖项</div></div>
+                    <div><div class="text-3xl md:text-4xl font-bold text-primary-600 dark:text-primary-400">5</div><div class="text-sm text-slate-500 mt-1">国际认证</div></div>
+                    <div><div class="text-3xl md:text-4xl font-bold text-primary-600 dark:text-primary-400">50+</div><div class="text-sm text-slate-500 mt-1">专利/软著</div></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 荣誉资质筛选分类 -->
+        <section class="py-8 sticky top-[73px] bg-white/80 dark:bg-slate-900/80 backdrop-blur-sm z-30 border-b border-slate-200 dark:border-slate-700 transition-theme">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex flex-wrap justify-center gap-3">
+                    <button data-cat="all" class="cat-filter px-5 py-2 rounded-full text-sm font-medium transition-all duration-200 border border-slate-300 dark:border-slate-600 hover:bg-primary-100 dark:hover:bg-primary-800/40 text-slate-700 dark:text-slate-300 [&.active]:bg-primary-500 [&.active]:text-white [&.active]:border-primary-500 active">全部</button>
+                    <button data-cat="cert" class="cat-filter px-5 py-2 rounded-full text-sm font-medium transition-all duration-200 border border-slate-300 dark:border-slate-600 hover:bg-primary-100 dark:hover:bg-primary-800/40 text-slate-700 dark:text-slate-300 [&.active]:bg-primary-500 [&.active]:text-white [&.active]:border-primary-500">体系认证</button>
+                    <button data-cat="award" class="cat-filter px-5 py-2 rounded-full text-sm font-medium transition-all duration-200 border border-slate-300 dark:border-slate-600 hover:bg-primary-100 dark:hover:bg-primary-800/40 text-slate-700 dark:text-slate-300 [&.active]:bg-primary-500 [&.active]:text-white [&.active]:border-primary-500">荣誉奖项</button>
+                    <button data-cat="patent" class="cat-filter px-5 py-2 rounded-full text-sm font-medium transition-all duration-200 border border-slate-300 dark:border-slate-600 hover:bg-primary-100 dark:hover:bg-primary-800/40 text-slate-700 dark:text-slate-300 [&.active]:bg-primary-500 [&.active]:text-white [&.active]:border-primary-500">专利/科研</button>
+                    <button data-cat="social" class="cat-filter px-5 py-2 rounded-full text-sm font-medium transition-all duration-200 border border-slate-300 dark:border-slate-600 hover:bg-primary-100 dark:hover:bg-primary-800/40 text-slate-700 dark:text-slate-300 [&.active]:bg-primary-500 [&.active]:text-white [&.active]:border-primary-500">社会责任</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- 荣誉列表展示区域（动态网格） -->
+        <section class="py-12 md:py-16 transition-theme">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div id="honorGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                    <!-- 动态渲染卡片 -->
+                </div>
+                <div id="noHonorResult" class="hidden text-center py-16">
+                    <i class="fa-solid fa-medal text-5xl text-slate-300 dark:text-slate-600 mb-4"></i>
+                    <p class="text-slate-500 dark:text-slate-400 text-lg">暂无此类荣誉资质，敬请期待</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 资质证书墙大图展示区 -->
+        <section class="py-12 bg-slate-100 dark:bg-slate-800/30 transition-theme">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-10">
+                    <h2 class="text-2xl md:text-3xl font-light text-slate-900 dark:text-white mb-2">资质证书墙</h2>
+                    <p class="text-slate-500 dark:text-slate-400 text-sm">部分核心资质展示</p>
+                </div>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                    <div class="bg-white dark:bg-slate-800 rounded-xl p-4 shadow-sm border border-slate-200 dark:border-slate-700 text-center hover:shadow-md transition"><i class="fa-regular fa-file-lines text-4xl text-primary-500 mb-2 block"></i><span class="text-xs font-medium">医疗机构执业许可证</span></div>
+                    <div class="bg-white dark:bg-slate-800 rounded-xl p-4 shadow-sm border border-slate-200 dark:border-slate-700 text-center hover:shadow-md transition"><i class="fa-solid fa-chart-line text-4xl text-primary-500 mb-2 block"></i><span class="text-xs font-medium">ISO 15189 认可证书</span></div>
+                    <div class="bg-white dark:bg-slate-800 rounded-xl p-4 shadow-sm border border-slate-200 dark:border-slate-700 text-center hover:shadow-md transition"><i class="fa-solid fa-hand-holding-heart text-4xl text-primary-500 mb-2 block"></i><span class="text-xs font-medium">JCI 国际认证</span></div>
+                    <div class="bg-white dark:bg-slate-800 rounded-xl p-4 shadow-sm border border-slate-200 dark:border-slate-700 text-center hover:shadow-md transition"><i class="fa-regular fa-copyright text-4xl text-primary-500 mb-2 block"></i><span class="text-xs font-medium">国家临床重点专科</span></div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 页脚 -->
+    <footer class="bg-slate-900 text-slate-300 py-12 transition-theme">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <div><div class="flex items-center gap-3 mb-4"><div class="w-10 h-10 rounded-lg bg-primary-500 flex items-center justify-center"><i class="fa-solid fa-heart-pulse text-white"></i></div><span class="font-semibold text-xl text-white">康禾医疗</span></div><p class="text-slate-400 text-sm">匠心医疗 · 载誉前行</p></div>
+                <div><h4 class="text-white font-medium mb-3">快捷导航</h4><ul class="space-y-2 text-sm"><li><a href="index.html" class="text-slate-400 hover:text-primary-400">首页</a></li><li><a href="about.html" class="text-slate-400 hover:text-primary-400">医院介绍</a></li><li><a href="honor.html" class="text-slate-400 hover:text-primary-400">荣誉资质</a></li></ul></div>
+                <div><h4 class="text-white font-medium mb-3">联系方式</h4><ul class="space-y-2 text-sm"><li class="flex gap-2"><i class="fa-solid fa-phone text-primary-400 mt-0.5"></i><span>400-888-9999</span></li><li class="flex gap-2"><i class="fa-regular fa-envelope text-primary-400 mt-0.5"></i><span>contact@kanghe.com</span></li><li class="flex gap-2"><i class="fa-solid fa-location-dot text-primary-400 mt-0.5"></i><span>北京市朝阳区建国路88号</span></li></ul></div>
+                <div><h4 class="text-white font-medium mb-3">关注我们</h4><div class="flex gap-4"><a href="#" class="text-slate-400 hover:text-primary-400 text-2xl"><i class="fa-brands fa-weixin"></i></a><a href="#" class="text-slate-400 hover:text-primary-400 text-2xl"><i class="fa-brands fa-weibo"></i></a><a href="#" class="text-slate-400 hover:text-primary-400 text-2xl"><i class="fa-brands fa-tiktok"></i></a></div></div>
+            </div>
+            <div class="border-t border-slate-800 pt-6 text-center text-slate-500 text-xs">© 2025 康禾医疗 版权所有 | 京ICP备12345678号-1</div>
+        </div>
+    </footer>
+
+    <script>
+        // ---------- 荣誉资质数据 ----------
+        const honorsData = [
+            { id: 1, name: "国际JCI认证医院", category: "cert", year: "2018", icon: "fa-solid fa-certificate", desc: "全球医疗服务最高标准认证，标志着医疗质量与国际接轨。", image: "https://picsum.photos/id/20/400/300" },
+            { id: 2, name: "国家三级甲等综合医院", category: "cert", year: "2020", icon: "fa-solid fa-hospital-user", desc: "国家卫健委评审最高等级，综合实力区域领先。", image: "https://picsum.photos/id/104/400/300" },
+            { id: 3, name: "全国百姓放心示范医院", category: "award", year: "2019", icon: "fa-solid fa-star", desc: "由中国医院协会授予，患者满意度连续五年高于98%。", image: "https://picsum.photos/id/48/400/300" },
+            { id: 4, name: "中国医院竞争力·智慧医院HIC", category: "award", year: "2024", icon: "fa-solid fa-microchip", desc: "智慧医疗创新典范，信息化建设标杆。", image: "https://picsum.photos/id/26/400/300" },
+            { id: 5, name: "ISO 15189 医学实验室认可", category: "cert", year: "2021", icon: "fa-solid fa-flask", desc: "检验结果国际互认，检测质量达到国际标准。", image: "https://picsum.photos/id/177/400/300" },
+            { id: 6, name: "国家临床重点专科（心血管内科）", category: "award", year: "2022", icon: "fa-solid fa-heartbeat", desc: "国家级重点专科，介入诊疗技术领先。", image: "https://picsum.photos/id/182/400/300" },
+            { id: 7, name: "实用新型专利：智能采血管理系统", category: "patent", year: "2023", icon: "fa-regular fa-lightbulb", desc: "提升采血效率与患者舒适度，获国家知识产权局授权。", image: "https://picsum.photos/id/157/400/300" },
+            { id: 8, name: "中国红十字奉献奖章", category: "social", year: "2022", icon: "fa-solid fa-hand-holding-heart", desc: "表彰在公益救援、健康扶贫中的突出贡献。", image: "https://picsum.photos/id/169/400/300" },
+            { id: 9, name: "北京市医保A级定点机构", category: "cert", year: "2019", icon: "fa-solid fa-id-card", desc: "医保管理规范，服务信誉优秀。", image: "https://picsum.photos/id/129/400/300" },
+            { id: 10, name: "全国护理优秀单位", category: "award", year: "2021", icon: "fa-solid fa-user-nurse", desc: "护理团队多次在技能竞赛中获奖。", image: "https://picsum.photos/id/64/400/300" },
+            { id: 11, name: "发明专利：远程医疗数据加密系统", category: "patent", year: "2024", icon: "fa-solid fa-laptop-code", desc: "保障远程会诊数据安全，行业创新技术。", image: "https://picsum.photos/id/2/400/300" },
+            { id: 12, name: "脱贫攻坚·健康帮扶先进单位", category: "social", year: "2020", icon: "fa-solid fa-handshake", desc: "对口支援基层医疗机构，助力健康乡村建设。", image: "https://picsum.photos/id/42/400/300" },
+            { id: 13, name: "ISO 27001 信息安全管理体系认证", category: "cert", year: "2023", icon: "fa-solid fa-shield-haltered", desc: "患者隐私数据安全达到国际标准。", image: "https://picsum.photos/id/91/400/300" },
+            { id: 14, name: "中国最佳雇主（医疗行业）", category: "award", year: "2024", icon: "fa-solid fa-briefcase", desc: "卓越人才发展与员工关怀体系。", image: "https://picsum.photos/id/89/400/300" }
+        ];
+
+        let currentCategory = "all";
+        const honorGrid = document.getElementById("honorGrid");
+        const noResultDiv = document.getElementById("noHonorResult");
+        const catBtns = document.querySelectorAll(".cat-filter");
+
+        // 过滤荣誉
+        function getFilteredHonors() {
+            if (currentCategory === "all") return honorsData;
+            return honorsData.filter(h => h.category === currentCategory);
+        }
+
+        // 渲染荣誉卡片（完全Tailwind，无额外样式覆盖）
+        function renderHonors() {
+            const filtered = getFilteredHonors();
+            if (filtered.length === 0) {
+                honorGrid.classList.add("hidden");
+                noResultDiv.classList.remove("hidden");
+                return;
+            }
+            honorGrid.classList.remove("hidden");
+            noResultDiv.classList.add("hidden");
+            honorGrid.innerHTML = filtered.map(honor => `
+                <div class="group bg-white dark:bg-slate-800 rounded-2xl shadow-sm border border-slate-200 dark:border-slate-700 overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+                    <div class="h-40 overflow-hidden relative">
+                        <img src="${honor.image}" alt="${honor.name}" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                        <div class="absolute top-3 right-3 w-10 h-10 rounded-full bg-white/90 dark:bg-slate-700/90 flex items-center justify-center shadow-sm">
+                            <i class="${honor.icon} text-primary-500 text-lg"></i>
+                        </div>
+                    </div>
+                    <div class="p-5">
+                        <div class="flex items-center justify-between mb-2">
+                            <h3 class="font-bold text-lg text-slate-800 dark:text-slate-100">${honor.name}</h3>
+                            <span class="text-xs text-primary-600 dark:text-primary-400 bg-primary-50 dark:bg-primary-900/30 px-2 py-0.5 rounded-full">${honor.year}</span>
+                        </div>
+                        <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">${honor.desc}</p>
+                        <div class="mt-4 flex justify-between items-center">
+                            <span class="text-xs text-slate-400"><i class="fa-regular fa-building"></i> 康禾医疗</span>
+                            <button class="view-cert-btn text-primary-600 dark:text-primary-400 text-xs font-medium hover:underline transition" data-id="${honor.id}">查看证书 <i class="fa-solid fa-arrow-right ml-1"></i></button>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+            // 绑定查看证书模拟弹窗
+            document.querySelectorAll('.view-cert-btn').forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    const id = parseInt(btn.getAttribute('data-id'));
+                    const honor = honorsData.find(h => h.id === id);
+                    if (honor) {
+                        alert(`【${honor.name}】\n颁发年份：${honor.year}\n详细描述：${honor.desc}\n（完整证书信息可至院区展示厅查阅）`);
+                    }
+                });
+            });
+        }
+
+        // 更新分类高亮
+        function updateCatActive() {
+            catBtns.forEach(btn => {
+                const cat = btn.getAttribute("data-cat");
+                if (cat === currentCategory) btn.classList.add("active");
+                else btn.classList.remove("active");
+            });
+        }
+
+        // 绑定分类点击事件
+        catBtns.forEach(btn => {
+            btn.addEventListener("click", () => {
+                const cat = btn.getAttribute("data-cat");
+                if (cat === currentCategory) return;
+                currentCategory = cat;
+                updateCatActive();
+                renderHonors();
+            });
+        });
+
+        // 深色模式切换 + 移动端菜单 (全局通用)
+        const themeToggle = document.getElementById('theme-toggle');
+        const htmlElem = document.documentElement;
+        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            htmlElem.classList.add('dark');
+        } else {
+            htmlElem.classList.remove('dark');
+        }
+        themeToggle.addEventListener('click', () => {
+            htmlElem.classList.toggle('dark');
+            localStorage.theme = htmlElem.classList.contains('dark') ? 'dark' : 'light';
+        });
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+        document.querySelectorAll('#mobile-menu a').forEach(link => link.addEventListener('click', () => mobileMenu.classList.add('hidden')));
+
+        // 初始化渲染
+        renderHonors();
+    </script>
+</body>
+
+</html>
