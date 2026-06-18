@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>专家团队 - 康禾医疗 · 汇聚名医 守护健康</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome 6 CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Tailwind 配置 -->
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            50: '#fff7ed',
+                            100: '#ffedd5',
+                            200: '#fed7aa',
+                            300: '#fdba74',
+                            400: '#fb923c',
+                            500: '#f97316',
+                            600: '#ea580c',
+                            700: '#c2410c',
+                            800: '#9a3412',
+                            900: '#7c2d12',
+                        },
+                        gray: {
+                            400: '#b8bfc0',
+                            500: '#94a3b8',
+                            600: '#64748b',
+                            700: '#334155',
+                            800: '#1e293b',
+                            900: '#0f172a',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .content-auto {
+                content-visibility: auto;
+            }
+            .transition-theme {
+                transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-slate-50 dark:bg-slate-900 text-slate-800 dark:text-slate-200 font-sans transition-theme antialiased">
+    <!-- 导航栏 (与全站风格保持一致) -->
+    <header
+        class="border-b border-slate-200 dark:border-slate-700 bg-white/90 dark:bg-slate-900/90 backdrop-blur-sm sticky top-0 z-50 transition-theme">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <div class="w-12 h-12 rounded-lg bg-primary-500 flex items-center justify-center text-white shadow-md">
+                    <i class="fa-solid fa-heart-pulse text-xl"></i>
+                </div>
+                <span class="font-semibold text-2xl tracking-tight text-primary-600 dark:text-primary-400">康禾医疗</span>
+            </div>
+            <nav class="hidden md:flex items-center gap-8">
+                <a href="index.html"
+                    class="text-slate-700 dark:text-slate-300 hover:text-primary-600 font-medium transition-theme py-2">首页</a>
+                <div class="relative group">
+                    <button
+                        class="flex items-center gap-1 text-slate-700 dark:text-slate-300 hover:text-primary-600 font-medium transition-theme py-2">
+                        医疗服务 <i class="fa-solid fa-chevron-down w-4 h-4 group-hover:rotate-180 transition-transform"></i>
+                    </button>
+                    <div
+                        class="absolute left-0 mt-1 w-64 bg-white/95 dark:bg-slate-800/95 backdrop-blur-sm rounded-xl shadow-lg border border-slate-200 dark:border-slate-700 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                        <div class="py-2">
+                            <a href="service-1.html"
+                                class="block px-5 py-2 hover:bg-slate-100 dark:hover:bg-slate-700 hover:text-primary-600">体检中心</a>
+                            <a href="service-2.html"
+                                class="block px-5 py-2 hover:bg-slate-100 dark:hover:bg-slate-700 hover:text-primary-600">专科诊疗</a>
+                            <a href="service-3.html"
+                                class="block px-5 py-2 hover:bg-slate-100 dark:hover:bg-slate-700 hover:text-primary-600">远程问诊</a>
+                            <a href="service-4.html"
+                                class="block px-5 py-2 hover:bg-slate-100 dark:hover:bg-slate-700 hover:text-primary-600">健康管理</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="relative group">
+                    <button
+                        class="flex items-center gap-1 text-slate-700 dark:text-slate-300 hover:text-primary-600 font-medium transition-theme py-2">
+                        关于我们 <i class="fa-solid fa-chevron-down w-4 h-4 group-hover:rotate-180 transition-transform"></i>
+                    </button>
+                    <div
+                        class="absolute left-0 mt-1 w-64 bg-white/95 dark:bg-slate-800/95 backdrop-blur-sm rounded-xl shadow-lg border border-slate-200 dark:border-slate-700 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                        <div class="py-2">
+                            <a href="about.html"
+                                class="block px-5 py-2 hover:bg-slate-100 dark:hover:bg-slate-700 hover:text-primary-600">医院介绍</a>
+                            <a href="team.html"
+                                class="block px-5 py-2 hover:bg-slate-100 dark:hover:bg-slate-700 hover:text-primary-600">专家团队</a>
+                            <a href="honor.html"
+                                class="block px-5 py-2 hover:bg-slate-100 dark:hover:bg-slate-700 hover:text-primary-600">荣誉资质</a>
+                        </div>
+                    </div>
+                </div>
+                <a href="news.html"
+                    class="text-slate-700 dark:text-slate-300 hover:text-primary-600 font-medium transition-theme py-2">新闻动态</a>
+                <a href="contact.html"
+                    class="text-slate-700 dark:text-slate-300 hover:text-primary-600 font-medium transition-theme py-2">联系我们</a>
+            </nav>
+            <div class="flex items-center gap-4">
+                <button id="theme-toggle" aria-label="切换深色/浅色模式"
+                    class="p-2 rounded-full text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-theme">
+                    <i class="fa-solid fa-sun w-5 h-5 hidden dark:block"></i>
+                    <i class="fa-solid fa-moon w-5 h-5 block dark:hidden"></i>
+                </button>
+                <button id="mobile-menu-btn" aria-label="菜单"
+                    class="md:hidden p-2 rounded-full text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-theme">
+                    <i class="fa-solid fa-bars w-6 h-6"></i>
+                </button>
+                <a href="appointment.html"
+                    class="hidden md:inline-block bg-primary-600 hover:bg-primary-700 dark:bg-primary-500 dark:hover:bg-primary-600 text-white text-sm font-semibold px-5 py-2.5 rounded-full shadow-sm transition-theme">立即预约</a>
+            </div>
+        </div>
+        <div id="mobile-menu"
+            class="md:hidden hidden bg-white/95 dark:bg-slate-900/95 backdrop-blur-sm border-t border-slate-200 dark:border-slate-700 px-4 py-4 shadow-lg transition-theme">
+            <div class="flex flex-col gap-3">
+                <a href="index.html" class="py-2 font-medium hover:text-primary-600">首页</a>
+                <details class="group">
+                    <summary class="flex justify-between items-center cursor-pointer list-none py-2 font-medium">医疗服务 <i
+                            class="fa-solid fa-chevron-down group-open:rotate-180 transition-transform"></i></summary>
+                    <div class="pl-4 mt-2 flex flex-col gap-2 text-sm"><a href="service-1.html">体检中心</a><a
+                            href="service-2.html">专科诊疗</a><a href="service-3.html">远程问诊</a><a
+                            href="service-4.html">健康管理</a></div>
+                </details>
+                <details class="group">
+                    <summary class="flex justify-between items-center cursor-pointer list-none py-2 font-medium">关于我们 <i
+                            class="fa-solid fa-chevron-down group-open:rotate-180 transition-transform"></i></summary>
+                    <div class="pl-4 mt-2 flex flex-col gap-2 text-sm"><a href="about.html">医院介绍</a><a
+                            href="team.html">专家团队</a><a href="honor.html">荣誉资质</a></div>
+                </details>
+                <a href="news.html" class="py-2 font-medium hover:text-primary-600">新闻动态</a>
+                <a href="contact.html" class="py-2 font-medium hover:text-primary-600">联系我们</a>
+                <div class="pt-2"><a href="appointment.html"
+                        class="block text-center bg-primary-600 text-white text-sm font-semibold px-5 py-2.5 rounded-full">立即预约</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- 页面标题区 -->
+        <section
+            class="bg-gradient-to-r from-primary-50 to-slate-100 dark:from-primary-900/20 dark:to-slate-800/50 py-12 md:py-16 transition-theme">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h1 class="text-4xl md:text-5xl font-light text-slate-900 dark:text-white mb-4">专家团队</h1>
+                <p class="text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">汇聚国内顶尖医学专家，以卓越医术与仁爱之心，为您的健康保驾护航</p>
+            </div>
+        </section>
+
+        <!-- 筛选栏：科室分类 + 搜索 -->
+        <section class="py-8 border-b border-slate-200 dark:border-slate-700 sticky top-[73px] bg-white/80 dark:bg-slate-900/80 backdrop-blur-sm z-40 transition-theme">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+                    <div class="flex flex-wrap gap-2">
+                        <button data-dept="all"
+                            class="dept-filter px-5 py-2 rounded-full text-sm font-medium transition-all duration-200 border border-slate-300 dark:border-slate-600 hover:bg-primary-100 dark:hover:bg-primary-800/40 text-slate-700 dark:text-slate-300 [&.active]:bg-primary-500 [&.active]:text-white [&.active]:border-primary-500 dark:[&.active]:bg-primary-500 dark:[&.active]:text-slate-900 active">全部</button>
+                        <button data-dept="cardiology"
+                            class="dept-filter px-5 py-2 rounded-full text-sm font-medium transition-all duration-200 border border-slate-300 dark:border-slate-600 hover:bg-primary-100 dark:hover:bg-primary-800/40 text-slate-700 dark:text-slate-300 [&.active]:bg-primary-500 [&.active]:text-white [&.active]:border-primary-500">心内科</button>
+                        <button data-dept="neurology"
+                            class="dept-filter px-5 py-2 rounded-full text-sm font-medium transition-all duration-200 border border-slate-300 dark:border-slate-600 hover:bg-primary-100 dark:hover:bg-primary-800/40 text-slate-700 dark:text-slate-300 [&.active]:bg-primary-500 [&.active]:text-white [&.active]:border-primary-500">神经外科</button>
+                        <button data-dept="orthopedics"
+                            class="dept-filter px-5 py-2 rounded-full text-sm font-medium transition-all duration-200 border border-slate-300 dark:border-slate-600 hover:bg-primary-100 dark:hover:bg-primary-800/40 text-slate-700 dark:text-slate-300 [&.active]:bg-primary-500 [&.active]:text-white [&.active]:border-primary-500">骨科</button>
+                        <button data-dept="gynecology"
+                            class="dept-filter px-5 py-2 rounded-full text-sm font-medium transition-all duration-200 border border-slate-300 dark:border-slate-600 hover:bg-primary-100 dark:hover:bg-primary-800/40 text-slate-700 dark:text-slate-300 [&.active]:bg-primary-500 [&.active]:text-white [&.active]:border-primary-500">妇产科</button>
+                        <button data-dept="pediatrics"
+                            class="dept-filter px-5 py-2 rounded-full text-sm font-medium transition-all duration-200 border border-slate-300 dark:border-slate-600 hover:bg-primary-100 dark:hover:bg-primary-800/40 text-slate-700 dark:text-slate-300 [&.active]:bg-primary-500 [&.active]:text-white [&.active]:border-primary-500">儿科</button>
+                        <button data-dept="endocrinology"
+                            class="dept-filter px-5 py-2 rounded-full text-sm font-medium transition-all duration-200 border border-slate-300 dark:border-slate-600 hover:bg-primary-100 dark:hover:bg-primary-800/40 text-slate-700 dark:text-slate-300 [&.active]:bg-primary-500 [&.active]:text-white [&.active]:border-primary-500">内分泌科</button>
+                    </div>
+                    <div class="relative w-full md:w-80">
+                        <i class="fa-solid fa-magnifying-glass absolute left-3 top-1/2 -translate-y-1/2 text-slate-400"></i>
+                        <input type="text" id="searchExpert" placeholder="搜索专家姓名、职称或专长..."
+                            class="w-full pl-10 pr-4 py-2 rounded-full border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 text-slate-800 dark:text-slate-200 focus:outline-none focus:ring-2 focus:ring-primary-400 transition-theme">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 专家列表区域 -->
+        <section class="py-12 md:py-16 transition-theme">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div id="expertsGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+                    <!-- 动态渲染专家卡片 -->
+                </div>
+                <div id="noResult" class="hidden text-center py-16">
+                    <i class="fa-solid fa-user-doctor text-5xl text-slate-300 dark:text-slate-600 mb-4"></i>
+                    <p class="text-slate-500 dark:text-slate-400 text-lg">未找到相关专家，试试其他关键词吧~</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 专家详情弹窗 (Modal) -->
+        <div id="expertModal" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-[100] hidden items-center justify-center p-4 transition-all duration-300">
+            <div class="bg-white dark:bg-slate-800 max-w-2xl w-full rounded-2xl shadow-2xl overflow-hidden transform transition-all">
+                <div class="relative">
+                    <button id="closeModal" class="absolute right-4 top-4 text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 bg-white/20 rounded-full p-1"><i class="fa-solid fa-times text-xl"></i></button>
+                    <div class="flex flex-col md:flex-row">
+                        <div class="md:w-2/5 bg-primary-50 dark:bg-primary-900/30 p-6 flex flex-col items-center justify-center">
+                            <img id="modalAvatar" src="" alt="专家头像" class="w-40 h-40 rounded-full object-cover border-4 border-white dark:border-slate-600 shadow-lg mb-4">
+                            <h3 id="modalName" class="text-2xl font-bold text-slate-800 dark:text-white">张建国</h3>
+                            <p id="modalTitle" class="text-primary-600 dark:text-primary-400 font-medium">主任医师</p>
+                            <p id="modalDept" class="text-sm text-slate-500 dark:text-slate-400 mt-1"><i class="fa-regular fa-building"></i> 心内科</p>
+                        </div>
+                        <div class="md:w-3/5 p-6">
+                            <div class="mb-4"><h4 class="font-semibold text-slate-700 dark:text-slate-200 flex items-center gap-2"><i class="fa-regular fa-address-card text-primary-500"></i> 个人简介</h4><p id="modalBio" class="text-slate-600 dark:text-slate-400 text-sm mt-1 leading-relaxed"></p></div>
+                            <div class="mb-4"><h4 class="font-semibold text-slate-700 dark:text-slate-200 flex items-center gap-2"><i class="fa-regular fa-star text-primary-500"></i> 擅长领域</h4><p id="modalSpecialty" class="text-slate-600 dark:text-slate-400 text-sm mt-1"></p></div>
+                            <div><h4 class="font-semibold text-slate-700 dark:text-slate-200 flex items-center gap-2"><i class="fa-regular fa-clock text-primary-500"></i> 出诊时间</h4><p id="modalSchedule" class="text-slate-600 dark:text-slate-400 text-sm mt-1"></p></div>
+                            <div class="mt-6 flex justify-end"><a href="appointment.html" class="bg-primary-600 hover:bg-primary-700 text-white px-5 py-2 rounded-full text-sm font-medium transition">预约挂号</a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- 页脚 -->
+    <footer class="bg-slate-900 text-slate-300 py-12 transition-theme">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <div><div class="flex items-center gap-3 mb-4"><div class="w-10 h-10 rounded-lg bg-primary-500 flex items-center justify-center"><i class="fa-solid fa-heart-pulse text-white"></i></div><span class="font-semibold text-xl text-white">康禾医疗</span></div><p class="text-slate-400 text-sm">汇聚名医 · 服务百姓</p></div>
+                <div><h4 class="text-white font-medium mb-3">快捷导航</h4><ul class="space-y-2 text-sm"><li><a href="index.html" class="text-slate-400 hover:text-primary-400">首页</a></li><li><a href="about.html" class="text-slate-400 hover:text-primary-400">医院介绍</a></li><li><a href="team.html" class="text-slate-400 hover:text-primary-400">专家团队</a></li></ul></div>
+                <div><h4 class="text-white font-medium mb-3">联系方式</h4><ul class="space-y-2 text-sm"><li class="flex gap-2"><i class="fa-solid fa-phone text-primary-400 mt-0.5"></i><span>400-888-9999</span></li><li class="flex gap-2"><i class="fa-regular fa-envelope text-primary-400 mt-0.5"></i><span>contact@kanghe.com</span></li><li class="flex gap-2"><i class="fa-solid fa-location-dot text-primary-400 mt-0.5"></i><span>北京市朝阳区建国路88号</span></li></ul></div>
+                <div><h4 class="text-white font-medium mb-3">关注我们</h4><div class="flex gap-4"><a href="#" class="text-slate-400 hover:text-primary-400 text-2xl"><i class="fa-brands fa-weixin"></i></a><a href="#" class="text-slate-400 hover:text-primary-400 text-2xl"><i class="fa-brands fa-weibo"></i></a><a href="#" class="text-slate-400 hover:text-primary-400 text-2xl"><i class="fa-brands fa-tiktok"></i></a></div></div>
+            </div>
+            <div class="border-t border-slate-800 pt-6 text-center text-slate-500 text-xs">© 2025 康禾医疗 版权所有 | 京ICP备12345678号-1</div>
+        </div>
+    </footer>
+
+    <script>
+        // ---------- 专家数据 (丰富真实感) ----------
+        const expertsData = [
+            { id: 1, name: "张建国", title: "主任医师", dept: "cardiology", deptName: "心内科", avatar: "https://picsum.photos/id/1005/400/400", bio: "原北京协和医院心内科主任，从事心血管临床工作30余年，完成冠脉介入手术超5000例。", specialty: "复杂冠心病介入治疗、高血压、心力衰竭、心律失常射频消融。", schedule: "周一、周三上午 8:00-12:00；周五下午 14:00-17:00" },
+            { id: 2, name: "李梅", title: "副主任医师", dept: "gynecology", deptName: "妇产科", avatar: "https://picsum.photos/id/1000/400/400", bio: "上海瑞金医院妇科专家，擅长妇科微创手术及妇科肿瘤综合治疗，发表SCI论文10余篇。", specialty: "子宫肌瘤、卵巢囊肿、宫腔粘连、盆底康复治疗。", schedule: "周二全天、周四上午" },
+            { id: 3, name: "王强", title: "主治医师", dept: "pediatrics", deptName: "儿科", avatar: "https://picsum.photos/id/1012/400/400", bio: "首都儿科研究所儿童保健专家，20年儿科临床经验，尤其擅长儿童生长发育评估。", specialty: "儿童反复呼吸道感染、过敏性疾病、生长发育迟缓、营养指导。", schedule: "周一至周五上午 9:00-12:00" },
+            { id: 4, name: "赵芳", title: "主任医师", dept: "endocrinology", deptName: "内分泌科", avatar: "https://picsum.photos/id/1025/400/400", bio: "中华医学会内分泌分会委员，糖尿病一体化管理领军人物。", specialty: "糖尿病精准控糖、甲状腺结节、骨质疏松症、痛风。", schedule: "周三、周五全天" },
+            { id: 5, name: "陈志远", title: "主任医师", dept: "neurology", deptName: "神经外科", avatar: "https://picsum.photos/id/177/400/400", bio: "美国约翰霍普金斯医院访问学者，擅长脑肿瘤及脑血管病显微手术。", specialty: "脑胶质瘤、垂体瘤、脑动脉瘤夹闭术、三叉神经痛微创治疗。", schedule: "周二下午、周四上午" },
+            { id: 6, name: "刘振华", title: "副主任医师", dept: "orthopedics", deptName: "骨科", avatar: "https://picsum.photos/id/182/400/400", bio: "关节外科与运动医学专家，完成关节置换手术2000余例。", specialty: "人工髋膝关节置换、关节镜微创手术、半月板损伤修复。", schedule: "周一上午、周三下午" },
+            { id: 7, name: "孙丽敏", title: "主任医师", dept: "cardiology", deptName: "心内科", avatar: "https://picsum.photos/id/20/400/400", bio: "享受国务院特殊津贴专家，心血管介入诊疗国家级培训导师。", specialty: "心肌病、难治性高血压、心脏起搏器植入及术后管理。", schedule: "周二、周四上午" },
+            { id: 8, name: "吴晓峰", title: "主治医师", dept: "orthopedics", deptName: "骨科", avatar: "https://picsum.photos/id/157/400/400", bio: "北京积水潭医院进修经历，擅长脊柱微创及创伤骨科。", specialty: "腰椎间盘突出微创治疗、四肢骨折内固定、骨质疏松性骨折。", schedule: "周一至周五下午" },
+            { id: 9, name: "周雅琴", title: "副主任医师", dept: "gynecology", deptName: "妇产科", avatar: "https://picsum.photos/id/29/400/400", bio: "致力于高危妊娠管理及优生优育咨询，保障母婴安全。", specialty: "产前诊断、高危妊娠管理、不孕不育及复发性流产。", schedule: "周三全天、周五上午" },
+            { id: 10, name: "林浩", title: "主治医师", dept: "pediatrics", deptName: "儿科", avatar: "https://picsum.photos/id/169/400/400", bio: "儿童呼吸与重症专业，擅长支气管镜诊疗技术。", specialty: "儿童哮喘、重症肺炎、慢性咳嗽及过敏性疾病。", schedule: "周二、周四全天" },
+            { id: 11, name: "郭志宏", title: "主任医师", dept: "neurology", deptName: "神经外科", avatar: "https://picsum.photos/id/26/400/400", bio: "功能神经外科带头人，帕金森病DBS手术专家。", specialty: "帕金森病、癫痫、面肌痉挛、脑深部电刺激术(DBS)。", schedule: "周一上午、周四下午" },
+            { id: 12, name: "王雅茹", title: "副主任医师", dept: "endocrinology", deptName: "内分泌科", avatar: "https://picsum.photos/id/64/400/400", bio: "肥胖与代谢病专家，擅长医学减重及糖尿病逆转治疗。", specialty: "肥胖症、多囊卵巢综合征、甲状腺疾病、青少年糖尿病。", schedule: "周五全天、周六上午" }
+        ];
+
+        let currentDept = "all";
+        let currentKeyword = "";
+
+        const expertsGrid = document.getElementById("expertsGrid");
+        const noResultDiv = document.getElementById("noResult");
+        const searchInput = document.getElementById("searchExpert");
+        const deptBtns = document.querySelectorAll(".dept-filter");
+        const modal = document.getElementById("expertModal");
+        const closeModalBtn = document.getElementById("closeModal");
+
+        // 过滤专家
+        function getFilteredExperts() {
+            let filtered = [...expertsData];
+            if (currentDept !== "all") {
+                filtered = filtered.filter(exp => exp.dept === currentDept);
+            }
+            if (currentKeyword.trim() !== "") {
+                const kw = currentKeyword.trim().toLowerCase();
+                filtered = filtered.filter(exp => exp.name.toLowerCase().includes(kw) || exp.title.toLowerCase().includes(kw) || exp.specialty.toLowerCase().includes(kw) || exp.deptName.toLowerCase().includes(kw));
+            }
+            return filtered;
+        }
+
+        // 渲染专家卡片
+        function renderExperts() {
+            const filtered = getFilteredExperts();
+            if (filtered.length === 0) {
+                expertsGrid.classList.add("hidden");
+                noResultDiv.classList.remove("hidden");
+                return;
+            }
+            expertsGrid.classList.remove("hidden");
+            noResultDiv.classList.add("hidden");
+            expertsGrid.innerHTML = filtered.map(exp => `
+                <div data-id="${exp.id}" class="expert-card bg-white dark:bg-slate-800 rounded-2xl shadow-sm border border-slate-200 dark:border-slate-700 overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-xl cursor-pointer group">
+                    <div class="relative overflow-hidden h-64">
+                        <img src="${exp.avatar}" alt="${exp.name}" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-4">
+                            <span class="text-white text-sm font-medium px-2 py-0.5 bg-primary-500 rounded-full">${exp.deptName}</span>
+                        </div>
+                    </div>
+                    <div class="p-5 text-center">
+                        <h3 class="text-xl font-bold text-slate-800 dark:text-slate-100">${exp.name}</h3>
+                        <p class="text-primary-600 dark:text-primary-400 text-sm font-medium mt-1">${exp.title}</p>
+                        <p class="text-slate-500 dark:text-slate-400 text-xs mt-2 line-clamp-2">${exp.specialty.substring(0, 50)}${exp.specialty.length > 50 ? '...' : ''}</p>
+                        <div class="mt-4 flex justify-center gap-3">
+                            <button class="view-detail-btn text-primary-600 dark:text-primary-400 text-sm font-medium inline-flex items-center gap-1 hover:gap-2 transition-all">查看详情 <i class="fa-solid fa-arrow-right"></i></button>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+            // 绑定卡片点击详情事件 (使用事件委托)
+            document.querySelectorAll('.expert-card').forEach(card => {
+                const id = parseInt(card.getAttribute('data-id'));
+                card.addEventListener('click', (e) => {
+                    if (e.target.classList.contains('view-detail-btn') || e.target.closest('.view-detail-btn')) {
+                        e.stopPropagation();
+                    }
+                    openExpertModal(id);
+                });
+                const detailBtn = card.querySelector('.view-detail-btn');
+                if (detailBtn) {
+                    detailBtn.addEventListener('click', (e) => {
+                        e.stopPropagation();
+                        openExpertModal(id);
+                    });
+                }
+            });
+        }
+
+        // 打开弹窗并填充数据
+        function openExpertModal(id) {
+            const expert = expertsData.find(e => e.id === id);
+            if (!expert) return;
+            document.getElementById("modalAvatar").src = expert.avatar;
+            document.getElementById("modalName").innerText = expert.name;
+            document.getElementById("modalTitle").innerText = expert.title;
+            document.getElementById("modalDept").innerHTML = `<i class="fa-regular fa-building"></i> ${expert.deptName}`;
+            document.getElementById("modalBio").innerText = expert.bio;
+            document.getElementById("modalSpecialty").innerText = expert.specialty;
+            document.getElementById("modalSchedule").innerHTML = `<i class="fa-regular fa-calendar-alt mr-1"></i> ${expert.schedule}`;
+            modal.classList.remove("hidden");
+            modal.classList.add("flex");
+            document.body.style.overflow = "hidden";
+        }
+
+        function closeModal() {
+            modal.classList.add("hidden");
+            modal.classList.remove("flex");
+            document.body.style.overflow = "";
+        }
+
+        // 更新分类高亮
+        function updateDeptActive() {
+            deptBtns.forEach(btn => {
+                const val = btn.getAttribute("data-dept");
+                if (val === currentDept) btn.classList.add("active");
+                else btn.classList.remove("active");
+            });
+        }
+
+        // 事件绑定
+        deptBtns.forEach(btn => {
+            btn.addEventListener("click", () => {
+                const dept = btn.getAttribute("data-dept");
+                if (dept === currentDept) return;
+                currentDept = dept;
+                currentPage = 1;
+                updateDeptActive();
+                renderExperts();
+            });
+        });
+
+        let debounceTimer;
+        searchInput.addEventListener("input", (e) => {
+            clearTimeout(debounceTimer);
+            debounceTimer = setTimeout(() => {
+                currentKeyword = e.target.value;
+                renderExperts();
+            }, 300);
+        });
+
+        closeModalBtn.addEventListener("click", closeModal);
+        modal.addEventListener("click", (e) => { if (e.target === modal) closeModal(); });
+
+        // 深色模式 + 移动菜单 (与全局一致)
+        const themeToggle = document.getElementById('theme-toggle');
+        const htmlElem = document.documentElement;
+        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) htmlElem.classList.add('dark');
+        themeToggle.addEventListener('click', () => { htmlElem.classList.toggle('dark'); localStorage.theme = htmlElem.classList.contains('dark') ? 'dark' : 'light'; });
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+        document.querySelectorAll('#mobile-menu a').forEach(link => link.addEventListener('click', () => mobileMenu.classList.add('hidden')));
+
+        // 初始化渲染
+        renderExperts();
+    </script>
+</body>
+
+</html>
